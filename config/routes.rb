@@ -1,5 +1,7 @@
 Rubunity::Application.routes.draw do
   
+  resources :bookmarks
+
   root :to => "users#show"
 
   resources :users, :user_sessions
@@ -7,7 +9,11 @@ Rubunity::Application.routes.draw do
   match "login" => "user_sessions#new", :as => "login"
   match "logout" => "user_sessions#destroy", :as => "logout"
   match "signup" => "users#new", :as => "signup"
-   
+  
+  match "settings" => "users#edit", :as => "settings"
+  
+  match "search" => "search#query", :as =>"search"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

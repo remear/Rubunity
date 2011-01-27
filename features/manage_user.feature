@@ -21,4 +21,5 @@ Feature: User creation and login
     And I fill in "email" with "esparkman@esdezines.com"
     And I fill in "password" with "123456"
     And I press "Login"
+    Then I should see page debug
     Then I should see "Hello!"

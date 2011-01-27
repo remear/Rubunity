@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126230538) do
+ActiveRecord::Schema.define(:version => 20110127023041) do
+
+  create_table "bookmarks", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "description"
+    t.string   "permalink"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookmarks", ["url"], :name => "index_bookmarks_on_url", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -21,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110126230538) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
 end
