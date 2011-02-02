@@ -19,8 +19,8 @@
 %br
 
 - if @url_status == true
-  - link_to @bookmark.url do
+  = link_to @bookmark.url do
     = image_tag '/images/buttons/btn_go_to_site.png'
 - else
-  - link_to @bookmark.url do
+  = link_to @bookmark.url do
     = image_tag '/images/buttons/btn_go_to_site_red.png'

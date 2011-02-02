@@ -3,7 +3,7 @@
     #small_signup{:style => "width:500px; float:right; margin-top:0px"}
       %span New to prb?
       = link_to 'Sign up now', register_url, :class => "signup-button"
-      Have an account? #{link_to '<span>Sign in</span>', '#', :class => "signin"}
+      Have an account? #{link_to 'Sign in', login_path, :class => "signin"}
     .clearer
   - else
     #sessioninfo
@@ -23,7 +23,7 @@
             %span{:style => "padding-left:20px; font-weight:bold"}
               %a.addleft{:href => "http://www.pledgie.com/campaigns/6762?canvas=false", :target => "_new"} Donate
 %fieldset#signin_menu
-  - form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
+  = form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
     %p
       %label{:for => "username"} Email
       = f.text_field :email

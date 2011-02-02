@@ -14,7 +14,7 @@
   %body
     #container.subpage
       #header
-        - link_to root_url, :title => "prb", :id => "logo" do
+        = link_to root_url, :title => "prb", :id => "logo" do
           %img#bird{:alt => "Tweet, tweet!", :src => "/images/prb.png"}/
         %h3{:style => "color:#999999; position:absolute; left:90px; top:15px"} Per general consensus, pants are required.
         = render :partial => 'layouts/sessioninfo'
