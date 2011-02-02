@@ -1,5 +1,33 @@
-<h1>New bookmark</h1>
+<%= content_for :breadcrumbs do %>
+  <li><%= link_to 'Bookmarks', bookmarks_path %></li>
+  <li>Create</li>
+<% end %>
+<%= content_for :actions do %>
+  <li><%= link_to 'Cancel', bookmarks_path, :style => "float:right", :class => 'backleft' %></li>
+<% end %>
 
-<%= render 'form' %>
+<h1>Create Bookmark</h1>
+<% content_for(:toolbar) do %><%= link_to 'Cancel', bookmarks_path %><% end %>
 
-<%= link_to 'Back', bookmarks_path %>
+<fieldset class="common-form standard-form">
+  <% form_for(@bookmark) do |f| %>
+    <%= f.error_messages %>
+    
+    <table border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <th><%= f.label :title %></th>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :url %></th>
+        <td><%= f.text_field :url, :size => 70 %></td>
+      </tr>
+      <tr>
+        <th style="vertical-align:top"><%= f.label :description %></th>
+        <td><%= f.text_area :description, :cols => 85, :rows => 10 %></td>
+      </tr>
+    </table>
+    <br />
+    <p style="text-align:right"><%= f.submit 'Create' %></p>
+  <% end %>
+</fieldset>

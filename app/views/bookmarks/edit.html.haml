@@ -1,0 +1,12 @@
+= content_for :breadcrumbs do
+  %li= link_to 'Bookmarks', bookmarks_path
+  %li= link_to @bookmark.title, @bookmark
+  %li Edit
+= content_for :actions do
+  %li= link_to 'Cancel', @bookmark, :class => 'backleft'
+  
+%h1= "Editing #{@bookmark.title}"
+
+= render 'form'
+
+

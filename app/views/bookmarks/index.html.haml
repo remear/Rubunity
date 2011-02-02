@@ -1,0 +1,18 @@
+= content_for :breadcrumbs do
+  %li Bookmarks
+= content_for :actions do
+  %li= link_to 'New Bookmark', new_bookmark_path, :style => "float:right", :class => 'addleft'
+
+= content_for :contentbar do
+  #custom_search
+    - form_for search_path, :url => search_path, :method => 'post' do |f|
+      %input#search{:autosave => "prb_srch", :name => "query", :placeholder => "Search...", :results => "5", :style => "width:170px", :type => "search"}/
+
+%h1 Bookmarks
+%br/
+%div
+  - @bookmarks.each do |bookmark|
+    %p= link_to bookmark.title, bookmark_path(bookmark)
+    %p.sosumi
+      Added at : #{bookmark.created_at.to_s(:long)}
+    %hr/

@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+  before_filter :require_user, :except => 'index, show'
   # GET /bookmarks
   # GET /bookmarks.xml
   def index
@@ -14,7 +15,8 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1.xml
   def show
     @bookmark = Bookmark.find(params[:id])
-
+    @url_status = url_lookup(@bookmark.url)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @bookmark }
@@ -25,7 +27,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new.xml
   def new
     @bookmark = Bookmark.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @bookmark }
@@ -41,7 +43,8 @@ class BookmarksController < ApplicationController
   # POST /bookmarks.xml
   def create
     @bookmark = Bookmark.new(params[:bookmark])
-
+    @bookmark.user_id = current_user.id
+    
     respond_to do |format|
       if @bookmark.save
         format.html { redirect_to(@bookmark, :notice => 'Bookmark was successfully created.') }

@@ -33,9 +33,46 @@ padding-bottom:9px;
 margin-bottom:20px;
 margin-top:20px;}
 
-#container { width: 980px; margin: 0 auto; position: relative; }
-#main { width:100%; position: relative; }
-#content { padding: 18px 20px; position: relative; color: #333; }
+#container { width: 980px; margin: 0 auto; }
+#main { background-color:#FFFFFF; width:940px; padding:0px 20px 40px 20px; -webkit-border-radius: 5px; }
+#content
+{
+  color:#333;
+  background-color:#FFFFFF;
+  margin-top:0;
+  word-wrap:break-word;-
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  width:980px;
+  margin:auto;
+  vertical-align:top;
+  -webkit-border-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#contentbar
+{
+  margin:0 0px 30px 0px;
+  padding:5px 0px 5px 0px;
+  background: #ffffff; /* old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* ie */
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width:980px;
+}
+
 #breadcrumb { clear:both; text-align:center; margin:18px auto; clear:both; font-size:10px; color:#686868; }
 
 .textfield { font-size: 11px;color:#333333;background:#F7F7F7;border: 1px solid #CCCCCC;padding-left: 1px; }
@@ -156,10 +193,17 @@ a.comment.right { background:url(/images/icons/icon_comment.gif) right no-repeat
 a.delete { background:url(/images/icons/delete15x15.png) 50% no-repeat;  text-indent:-9999px; display:block; }
 a.arrow { background:url(/images/arrow_next.gif) right no-repeat; padding-right: 20px; }
 a.add { background:url(/images/icons/plus.png) right no-repeat; padding-right: 20px; }
-.addleft { background:url(/images/icons/plus.png) left no-repeat; padding-left: 20px; }
 a.thumbsup { background:url(/images/icons/thumbsup.gif) left no-repeat; padding: 2px 0 2px 10px; }
 a.rss { background:url(/images/icons/rss22x12.png) left no-repeat !important; padding-left: 30px; }
 a.flag { background:url(/images/icons/flag.png) left no-repeat !important; padding-left: 25px; }
+a.add { background:url(/images/icons/plus.png) right no-repeat; padding-right: 20px; }
+a.addleft { background:url(/images/icons/plus.png) left no-repeat; padding-left: 20px; }
+a.remove { background:url(/images/icons/minus.png) right no-repeat; padding-right: 20px; }
+a.removeleft { background:url(/images/icons/minus.png) left no-repeat; padding-left: 20px; }
+a.back { background:url(/images/icons/back.png) right no-repeat; padding-right: 20px; }
+a.backleft { background:url(/images/icons/back.png) left no-repeat; padding:3px 0px 3px 20px;}
+a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right: 20px; }
+a.editleft { background:url(/images/icons/edit.gif) left no-repeat; padding:3px 0px 3px 20px; }
 
 #main .sidebar { font-size: 10px; line-height: 18px; color:#686868; }
 #main .callout { font-size: 11px; line-height: 18px; margin-bottom: 18px; }

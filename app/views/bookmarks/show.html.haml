@@ -1,0 +1,26 @@
+= content_for :breadcrumbs do
+  %li Bookmarks
+= content_for :actions do
+  - if @bookmark.user == current_user
+    %li= link_to 'Edit', edit_bookmark_path(@bookmark), :class => 'editleft'
+  %li= link_to 'Back', bookmarks_path, :class => 'backleft'
+
+%p#notice
+  = notice
+
+%h1= @bookmark.title
+
+%p
+  Bookmarked :
+  = @bookmark.created_at.to_s(:long)
+
+%h2= @bookmark.url
+
+%br
+
+- if @url_status == true
+  - link_to @bookmark.url do
+    = image_tag '/images/buttons/btn_go_to_site.png'
+- else
+  - link_to @bookmark.url do
+    = image_tag '/images/buttons/btn_go_to_site_red.png'

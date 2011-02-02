@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "standard"
   before_filter :ensure_not_logged_in, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit] 
   def show
