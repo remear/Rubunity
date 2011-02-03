@@ -22,10 +22,10 @@ test: &test
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: Rubunity_test
+  database: rubunity_test
   pool: 5
   username: root
-  password: 24xhub
+  password: 
   socket: /tmp/mysql.sock
 
 production:
