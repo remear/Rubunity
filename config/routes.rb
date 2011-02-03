@@ -1,7 +1,8 @@
 Rubunity::Application.routes.draw do
+  resources :comments
 
   resources :bookmarks do
-     resources :comments
+    resources :comments
   end
 
   root :to => "bookmarks#index"

@@ -6,8 +6,7 @@
   %li= link_to 'Back', bookmarks_path, :class => 'backleft'
 
 %p#notice
-  = notice
-
+  
 %h1= @bookmark.title
 
 %p
@@ -25,5 +24,27 @@
   = link_to @bookmark.url do
     = image_tag '/images/buttons/btn_go_to_site_red.png'
 
-%h2 Comments
-= render 'comments/form'
+%h2.section
+  Comments
+  - if current_user
+    %span{:style => "float:right"}
+      %a.addleft{:href => "#topic_form", :onclick => "$('#comment_form').toggle()"} Add Comment
+%br/
+- if current_user
+  #comment_form{:style => "display:none"}
+    = form_for [@bookmark, Comment.new] do |f|
+      %p
+        = f.label :title
+        = f.text_field :title
+      %p
+        = f.text_area :body, :cols => '103', :rows => '4'
+      %p= f.submit 'Add Comment', :style => 'float:right'
+      .clearer
+      %br/
+#comments
+  - if ! @bookmark.comments.blank?
+    - @bookmark.comments.each do |comment|
+      = render 'comment', :comment => comment
+  - else
+    %p.sosumi No comments have been added
+
