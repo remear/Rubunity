@@ -12,6 +12,9 @@ Rubunity::Application.routes.draw do
   
   match "settings" => "users#edit", :as => "settings"
   
-  match "search" => "search#query", :as =>"search"
+  match "search" => "search#query", :as => "search"
   
+  
+  #pages
+  match "botusage" => "pages#irc_bot_usage", :as => "bot_usage"
 end

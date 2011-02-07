@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Rubunity</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <%= stylesheet_link_tag 'simple.css' %>
+</head>
+<body>
+  <div id="gheader">
+    <div id="logo"></div>
+    <p class="subtext">Rubunity - Per general consensus, pants are required</p>
+    <%= render :partial => 'layouts/gnav' %>
+  </div>
+  <div id="gheader-shadow"></div>
+
+  <div id="container">
+    <div id="search-container">
+        <h2 class="">Search for Ruby or Rails information</h2>
+        <form action="http://www.unixstamp.com/index.php" method="get" onSubmit="location.href = 'http://www.unixstamp.com/' + prepare(document.getElementById('convert-field').value); return (false);">
+          <div class="textInput"><input id="convert-field" class="convertInput" type="text" name="z" value="" placeholder="Enter a search term..."></div>
+          <div class="convertBtn"><input type="image" value="" src="/images/buttons/search.png"></div>
+        </form>
+        <div id="clearer"></div>
+        <p class="subtext">You can use almost any format for the date.</p>
+    </div>
+    <div id="search-container-shadow"></div>
+    
+    <div id="login-form-home">
+      <h3>Sign in</h3>
+       <%= form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f| %>
+          <div id="login-field"><%= f.text_field :email, :placeholder => 'name@example.com'%></div>
+          <div id="password-field"><%= f.text_field :password, :placeholder => 'password' %></div>
+          <%= f.submit 'Sign in', :class=>'signin' %>
+       <% end %>
+    </div>
+  </div>
+</body>
+</html>

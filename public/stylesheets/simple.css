@@ -14,6 +14,8 @@ body
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* ie */
 }
 
+.clearer { clear:both; display:block; margin:0px; padding:0px; height:0px; line-height:1px; font-size:1px; }
+
 #gheader, #gheader-shadow { width:100%; }
 
 #gheader
@@ -31,7 +33,12 @@ body
 #gheader p { margin:0px 0 20px 80px; -webkit-font-smoothing:subpixel-antialiased; color:#94a4b1; }
 
 #gheader ul { margin:0 0 0 40px; font-size:14px; color:#24689E; }
-#gheader ul li { display:inline; margin-right:40px; -webkit-font-smoothing:subpixel-antialiased; }
+#gheader ul li
+{
+	display:inline;
+	margin-right:40px;
+	-webkit-font-smoothing:subpixel-antialiased;
+}
 
 #gheader-shadow
 {
@@ -51,9 +58,16 @@ body
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
 	border-radius:8px;
-	padding:10px 15px 10px 15px;
+	padding:10px 15px 20px 20px;
 	margin:10px 0px 20px 0px;
 }
+
+h2 { font-weight:normal; margin-bottom:20px; color:#24689E; }
+
+table.fullwidth { width:100%; }
+table.list { border-spacing:0px; }
+table.list thead th { border-bottom:2px solid #999; text-align:left; height:30px; }
+table.list tbody td { padding:8px 5px 8px 0px; }
 
 #search-container, #search-container-shadow
 {
@@ -94,7 +108,6 @@ body
 	float:left;
 }
 
-
 .textInput
 {
    background-image:url(http://www.unixstamp.com/img/input.png);
@@ -117,3 +130,21 @@ body
 	letter-spacing:-1px;
 	width:100%;
 }
+
+#login-form-home { width:600px; margin:50px auto; }
+#login-form-home input[type=text]
+{
+	height:20px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	border:1px #CCC solid;
+	font-size:14px;
+	padding:8px 10px 8px 10px;
+	width:200px;
+}
+#login-form-home .signin { background:url(/images/buttons/signin.png) no-repeat; margin-top:-2px; height:40px; width:126px; border:0px; text-indent:-9999px; }
+#login-form-home .signin:hover { background:url(/images/buttons/signin_over.png) no-repeat; }
+#login-form-home #login-field { width:235px; float:left; }
+#login-form-home #password-field { width:235px; float:left; }
+#login-form-home h3 { border-bottom:1px #ccc solid; padding-bottom:5px; }

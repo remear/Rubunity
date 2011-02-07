@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout "new"
+  layout :choose_layout
   
   def home
   end
@@ -8,5 +8,12 @@ class PagesController < ApplicationController
   end
   
   def irc_bot_usage
+  end
+  
+  def choose_layout
+    case action_name
+      when 'home' then 'home'
+      else 'content'
+    end
   end
 end
