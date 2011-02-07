@@ -9,10 +9,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rubunity_development
+  database: rubunity
   pool: 5
   username: root
-  password: 
+  password: 24xhub
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -22,7 +22,7 @@ test: &test
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: Rubunity_test
+  database: rubunity_test
   pool: 5
   username: root
   password: 24xhub

@@ -2,7 +2,7 @@ Rubunity::Application.routes.draw do
   
   resources :bookmarks
 
-  root :to => "bookmarks#index"
+  root :to => "pages#home"
 
   resources :users, :user_sessions
  

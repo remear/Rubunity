@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Unix timestamp date converter</title>
+    <meta name="description" content="A powerful unix timestamp converter to convert unix stamps to dates and vice versa">
+    <meta name="keywords" content="unix, timestamp, time, stamp, epoch, calculator, conversion">
+    <meta name="google-site-verification" content="P0Wn-9hVkTZmDIY8z16i1VBA-_xnreIdRONjfP-yhjs" />
+    <link rel="shortcut icon" href="/img/icon.png">
+    <%= stylesheet_link_tag 'simple.css' %>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19478186-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</head>
+
+<body>
+<div id="gheader">
+  <ul>
+    <li>About</li>
+    <li>Community</li>
+    <li>Fame</li>
+    <li>Shame</li>
+  </ul>
+</div>
+<div id="gheader-shadow"></div>
+
+<div id="container">
+  
+  <div id="search-container">
+      <h2 class="">Search for Ruby or Rails information</h2>
+      <form action="http://www.unixstamp.com/index.php" method="get" onSubmit="location.href = 'http://www.unixstamp.com/' + prepare(document.getElementById('convert-field').value); return (false);">
+      <div class="textInput"><input id="convert-field" class="convertInput" type="text" name="z" value="" placeholder="Enter a search term..."></div>
+      <div class="convertBtn"><input type="image" value="" src="/images/buttons/search.png"></div>
+      </form>
+      <div class="subtext">You can use almost any format for the date.</div>
+  </div>
+</div>
+</body>
+</html>
