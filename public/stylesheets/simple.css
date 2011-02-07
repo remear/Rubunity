@@ -1,3 +1,4 @@
+html, body { height:100%; }
 body
 {
    font-family: "proxima-nova-1", "proxima-nova-2", Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -7,6 +8,14 @@ body
    color: #283644;
    font-size:13px;
 	margin:0px;
+	
+	background: #f2f5f6; /* old browsers */
+	background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* firefox */
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* webkit */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* ie */
+	
 }
 
 #gheader, #gheader-shadow { width:100%; }
@@ -18,10 +27,14 @@ body
 	background: -moz-linear-gradient(top, #F2F3F4 0%, #E8EDF2 37%, #C9D3DD 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F2F3F4), color-stop(37%,#E8EDF2), color-stop(100%,#C9D3DD)); /* webkit */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F2F3F4', endColorstr='#C9D3DD',GradientType=0 ); /* ie */
-	height:30px;
+	height:60px;
 }
 
-#gheader ul { margin:0px; font-size:14px; }
+#gheader #logo { width:80px; height:80px; background:url(/images/logo.png) no-repeat; margin-left:20px; float:left; }
+
+#gheader p { margin:0px 0 20px 80px; -webkit-font-smoothing:subpixel-antialiased; color:#94a4b1; }
+
+#gheader ul { margin:0 0 0 40px; font-size:14px; color:#24689E; }
 #gheader ul li { display:inline; margin-right:40px; -webkit-font-smoothing:subpixel-antialiased; }
 
 #gheader-shadow
@@ -29,9 +42,8 @@ body
 	height:20px;
 	background: #cedce7; /* old browsers */
 	background: -moz-linear-gradient(top, #596a72 0%, #bdcdde 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#596a72), color-stop(100%,#bdcdde)); /* webkit */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#596a72), color-stop(100%,#f2f5f6)); /* webkit */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#bdcdde',GradientType=0 ); /* ie */
-	
 	margin-bottom:20px;
 }
 
@@ -56,7 +68,7 @@ body
 	padding:15px 15px 10px 15px;
 	height:100px;
 	width:570px;
-	margin:auto;
+	margin:100px auto;
 }
 #search-container h2 { text-align:center; width:300px; margin:auto auto 10px auto; color:#FFFFFF; font-size:16px; }
 #search-container .subtext { text-align:center; width:300px; margin:auto; }
