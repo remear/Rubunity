@@ -16,67 +16,6 @@ a, a:link { color:#0085cf; }
 a:active,a:hover { color:green }
 
 
-img { behavior:url(/stylesheets/iepngfix.htc); }
-img.left { float: left; margin: 2px 20px 16px 0; }
-img.right { float: right; margin: 2px 0 16px 20px; }
-img.across { margin: 2px 0 16px 0; }
-img.flushleft { margin-left: -20px; }
-img.flushright { margin-right: -20px; }
- 
-#dividerbar { color:#666666; background-color:#E9E9E9;
--moz-border-radius: 8px;
--webkit-border-radius: 8px;
-height:10px;
-padding: 3px;
-padding-left:10px;
-padding-bottom:9px;
-margin-bottom:20px;
-margin-top:20px;}
-
-#container { width: 980px; margin: 0 auto; }
-#main { background-color:#FFFFFF; width:940px; padding:0px 20px 40px 20px; -webkit-border-radius: 5px; }
-#content
-{
-  color:#333;
-  background-color:#FFFFFF;
-  margin-top:0;
-  word-wrap:break-word;-
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  width:980px;
-  margin:auto;
-  vertical-align:top;
-  -webkit-border-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-#contentbar
-{
-  margin:0 0px 30px 0px;
-  padding:5px 0px 5px 0px;
-  background: #ffffff; /* old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* firefox */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* webkit */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* ie */
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  width:980px;
-}
-
-#breadcrumb { clear:both; text-align:center; margin:18px auto; clear:both; font-size:10px; color:#686868; }
-
-.textfield { font-size: 11px;color:#333333;background:#F7F7F7;border: 1px solid #CCCCCC;padding-left: 1px; }
-
 /* pagination */
 .pagination { padding: 2px; margin:30px 3px; text-align:center; }
 .pagination a { padding: 2px 5px 2px 5px; margin: 0px; border: 1px solid #EEE; text-decoration: none; color: #036CB4; }
@@ -100,16 +39,7 @@ margin-top:20px;}
 #globalfooter form { margin: 18px 10px; }
 #globalfooter .search-wrapper { margin: 0 auto; }
 #globalfooter .search-wrapper input.prettysearch { margin-left: 10px; }
- 
-p.last, ul.last, ol.last, li.last { _width:auto !important; _float:none !important; }
- 
-#container:after, #content:after, .grid2col:after, .grid2cola:after, .grid2colb:after, .grid2colc:after, .grid2cold:after, .grid2cole:after, .grid2colf:after, .grid3col:after, .grid3cola:after, .grid4col:after, .grid5col:after, .grid6col:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-#container, #content, .grid2col, .grid2cola, .grid2colb, .grid2colc, .grid2cold, .grid2cole, .grid2colf, .grid3col, .grid3cola, .grid4col, .grid5col, .grid6col { _zoom:1; }
- 
-/* TYPE */
-body { font: 11px/14px "Lucida Grande", Geneva, Arial, Verdana, sans-serif !important; background-color:#e3e3e3; color:#333; margin-top:20px; height:100%; }
 
-.right { text-align:right; }
 
 a { color: #2971a7; }
 strong, b { font-weight:bold; }
@@ -121,9 +51,6 @@ p.intro { font-weight: bold; }
 h2.section { padding-bottom:5px; border-bottom:1px solid #EEEEEE; color:#666; font-weight:normal; margin-bottom:20px; }
 
 
-/* TYPE */
-/*body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif; background-color: #fff; color: #333; }*/
- 
 a { color: #08c; }
 a:link, a:visited, a:active { text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -145,7 +72,6 @@ a.zip { background: url(http://images.apple.com/global/elements/icons/globalicon
 a.keynote { background: url(http://images.apple.com/global/elements/icons/globaliconkeynote12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
 a.audio { background: url(http://images.apple.com/global/elements/icons/globaliconaudio12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
 
-
 /* colors */
 .gray { color:gray; }
 .green { color:green; }
@@ -163,31 +89,11 @@ p { margin-bottom: 18px; }
 h1 { font-weight: bold; font-size: 24px; line-height: 36px; margin-bottom: 18px; border-bottom: 1px #DEDEDE solid; font-weight:normal; /*color:#5b5b5b;*/ color:#2260be; }
 h1 span.section { font-size:12px; float:right; padding-top:5px; }
 h2 { font-weight: bold; font-size: 16px; line-height: 18px; margin-bottom: 18px; }
-h3 { font-weight: bold; font-size: 1em; line-height: 18px; }
+h3 { font-weight: bold; font-size: 1em; line-height: 18px;  margin-bottom:20px; }
 h3.section { border-bottom:1px solid #CCCCCC; padding-bottom:5px; margin-bottom:10px; color:#2260be; }
 h4 { font-weight: bold; font-size: 10px; line-height: 18px; }
-position { font-weight: bold; }
 .more { text-align: right; }
- 
-#main ul { margin-bottom: 18px; list-style: none outside; }
-#main ol { margin-bottom: 18px; list-style: decimal; margin-left: 2.2em; }
-#main ul.square,
-#main ul.circle { margin-left: 2em; }
-#main ul.square { list-style: square outside; }
-#main ul.circle { list-style: circle outside; }
-#main ul ul.circle,
-#main ul ul.square { margin-top: 4px; margin-bottom: 5px; }
-#main ol.sosumi { margin-left: 0; padding-left: 2em; }
- 
-#main a.pdf { background: url(http://images.apple.com/global/elements/icons/globaliconpdf12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.html { background: url(http://images.apple.com/global/elements/icons/globaliconhtml12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.qt { background: url(http://images.apple.com/global/elements/icons/globaliconqt12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.ical { background: url(http://images.apple.com/global/elements/icons/globaliconical12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.dl { background: url(http://images.apple.com/global/elements/icons/globalicondl11x10.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.dmg { background: url(http://images.apple.com/global/elements/icons/globalicondmg12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.zip { background: url(http://images.apple.com/global/elements/icons/globaliconzip12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.keynote { background: url(http://images.apple.com/global/elements/icons/globaliconkeynote12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
-#main a.audio { background: url(http://images.apple.com/global/elements/icons/globaliconaudio12x12.gif) 0 0.4em no-repeat; display: block; padding-left: 20px; }
+
 a.comment { background:url(/images/icons/icon_comment.gif) left no-repeat; padding-left: 20px; }
 a.comment.right { background:url(/images/icons/icon_comment.gif) right no-repeat; padding-right: 20px; }
 a.delete { background:url(/images/icons/delete15x15.png) 50% no-repeat;  text-indent:-9999px; display:block; }
@@ -197,7 +103,7 @@ a.thumbsup { background:url(/images/icons/thumbsup.gif) left no-repeat; padding:
 a.rss { background:url(/images/icons/rss22x12.png) left no-repeat !important; padding-left: 30px; }
 a.flag { background:url(/images/icons/flag.png) left no-repeat !important; padding-left: 25px; }
 a.add { background:url(/images/icons/plus.png) right no-repeat; padding-right: 20px; }
-a.addleft { background:url(/images/icons/plus.png) left no-repeat; padding-left: 20px; }
+a.addleft { background:url(/images/icons/plus.png) left no-repeat; padding:3px 0 3px 20px; }
 a.remove { background:url(/images/icons/minus.png) right no-repeat; padding-right: 20px; }
 a.removeleft { background:url(/images/icons/minus.png) left no-repeat; padding-left: 20px; }
 a.back { background:url(/images/icons/back.png) right no-repeat; padding-right: 20px; }
@@ -205,28 +111,6 @@ a.backleft { background:url(/images/icons/back.png) left no-repeat; padding:3px 
 a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right: 20px; }
 a.editleft { background:url(/images/icons/edit.gif) left no-repeat; padding:3px 0px 3px 20px; }
 
-#main .sidebar { font-size: 10px; line-height: 18px; color:#686868; }
-#main .callout { font-size: 11px; line-height: 18px; margin-bottom: 18px; }
-#main .last { margin-bottom: 0; }
- 
-/* PRETTY SEARCH */
-input.prettysearch { width:200px; height: 16px; background: url(http://images.apple.com/global/elements/prettysearch/searchfield_repeat.png) center top repeat-x; border: 0px; margin: 0; padding: 3px 0 0 0; font:11px "Lucida Grande", Geneva, Arial, sans-serif; }
-.search-wrapper { position: relative; width: 200px; }
-.search-wrapper input.prettysearch { width: 171px; margin-left: 20px; *margin-top:-1px; *margin-right:-2px; *margin-left:10px; }
-.search-wrapper .left, 
-.search-wrapper .right { behavior:url(/stylesheets/iepngfix.htc); }
-.search-wrapper .left { display: block; position: absolute; left: 0; top: 0; width: 20px; height: 19px; background: url(http://images.apple.com/global/elements/prettysearch/searchfield_leftcap.png) left top no-repeat; }
-.search-wrapper .right { display: block; position: absolute; right: 0; top: 0; width: 10px; height: 19px; background: url(http://images.apple.com/global/elements/prettysearch/searchfield_rightcap.png) right top no-repeat; }
-.search-wrapper.empty.blurred input { color: #7E7E7E; }
-.search-wrapper .reset { position: absolute; width: 11px; height: 11px; overflow:hidden; z-index: 1; right: 4px; top: 4px; background: url(http://images.apple.com/global/elements/prettysearch/close.gif); display: block; cursor: pointer; _cursor:hand; }
-.search-wrapper.empty .reset { display: none; }
- 
-/* GLOBAL FOOTER */
-#globalfooter p { margin-bottom: 1em; }
-#globalfooter form { margin: 18px 10px; }
-#globalfooter .search-wrapper { margin: 0 auto; }
-#globalfooter .search-wrapper input.prettysearch { margin-left: 10px; }
- 
 /* PRINT */
 @media print {
 	body, #main, #content { color:#000 !important; }
@@ -234,106 +118,3 @@ input.prettysearch { width:200px; height: 16px; background: url(http://images.ap
 	#tabs, #globalheader, #globalfooter, #directorynav, .noprint, .hide { display: none !important; }
 	#main a.pdf, #main a.html, #main a.qt, #main a.ical, #main a.dl, #main a.dmg, #main a.zip, #main a.keynote, #main a.audio { padding-left: 0 !important; background-image: none !important; }
 }
-
-/* errors */
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-top:10px;
-  margin-bottom: 0px;
-  padding: 5px;
-}
-
-#errorExplanation ul li { margin-left:20px; font-size: 12px; list-style: square; }
-
-
-
-.transparent{opacity:.0;}
-
-.ie .transparent{filter:alpha(opacity=0);}
-
-.error{color:#801b1b;}
-
-.notice{color:#801b1b;}
-
-.top{vertical-align:top!important;}
-
-.bottom{vertical-align:bottom!important;}
-
-.middle{vertical-align:middle!important;}
-
-.first{margin-top:0;padding-top:0;}
-
-.last{margin-bottom:0;padding-bottom:0;}
-
-.right{float:right;}
-
-.left{float:left;}
-
-.clearfix{zoom:1;}
-
-.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-
-.disabled{color:#bbb;}
-
-.inline{display:inline;}
-
-.clear{clear:both;}
-
-.loading{background-position:50% 50%;background-repeat:no-repeat;}
-
-.hidden{display:none;}
-
-.invisible{visibility:hidden;}
-
-.offscreen{position:absolute;left:-9999px;overflow:hidden;}
-
-.empty-set{padding:30px!important;}
-
-.numeric{font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;}
-
-.no-border{border:0!important;}
-
-.round{-moz-border-radius:5px;-webkit-border-radius:5px;}
-
-.round-top-right{-moz-border-radius-topright:5px;-webkit-border-top-right-radius:5px;}
-
-.round-right{-moz-border-radius-topright:5px;-moz-border-radius-bottomright:5px;-webkit-border-top-right-radius:5px;-webkit-border-bottom-right-radius:5px;}
-
-.round-bottom-right{-moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px;}
-
-.round-bottom{-moz-border-radius-topright:0;-moz-border-radius-topleft:0;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;-webkit-border-top-right-radius:0;-webkit-border-top-left-radius:0;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;}
-
-.round-bottom-left{-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;}
-
-.round-left{-moz-border-radius-topleft:5px;-moz-border-radius-bottomleft:5px;-webkit-border-top-left-radius:5px;-webkit-border-bottom-left-radius:5px;}
-
-.round-top-left{-moz-border-radius-topleft:5px;-webkit-border-top-left-radius:5px;}
-
-.round-top{-moz-border-radius-topright:5px;-moz-border-radius-topleft:5px;-moz-border-radius-bottomright:0;-moz-border-radius-bottomleft:0;-webkit-border-top-right-radius:5px;-webkit-border-top-left-radius:5px;-webkit-border-bottom-right-radius:0;-webkit-border-bottom-left-radius:0;}
-
