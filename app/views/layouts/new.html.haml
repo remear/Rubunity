@@ -2,16 +2,21 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title Rubunity
-    %meta{:content => "", :name => "description"}
-      %meta{:content => "", :name => "keywords"}
-    = stylesheet_link_tag 'simple.css', 'base.css'
-    = javascript_include_tag 'jquery', 'application'
+    %title Unix timestamp date converter
+    %meta{:content => "A powerful unix timestamp converter to convert unix stamps to dates and vice versa", :name => "description"}
+      %meta{:content => "unix, timestamp, time, stamp, epoch, calculator, conversion", :name => "keywords"}
+        %meta{:content => "P0Wn-9hVkTZmDIY8z16i1VBA-_xnreIdRONjfP-yhjs", :name => "google-site-verification"}/
+        %link{:href => "/img/icon.png", :rel => "shortcut icon"}
+          = stylesheet_link_tag 'simple.css'
   %body
     #gheader
       #logo
       %p.subtext Rubunity - Per general consensus, pants are required
-      = render :partial => 'layouts/gnav'
+      %ul
+        %li About
+        %li Community
+        %li Fame
+        %li Shame
     #gheader-shadow
     #container
       #search-container
@@ -21,12 +26,5 @@
             %input#convert-field.convertInput{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
           .convertBtn
             %input{:src => "/images/buttons/search.png", :type => "image", :value => ""}/
-        #clearer
-        %p.subtext You can use almost any format for the date.
+        .subtext You can use almost any format for the date.
       #search-container-shadow
-      #login-form-home
-        %h3 Sign in
-        = form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
-          #login-field= f.text_field :email, :placeholder => 'name@example.com'
-          #password-field= f.text_field :password, :placeholder => 'password'
-          = f.submit 'Sign in', :class=>'signin'
