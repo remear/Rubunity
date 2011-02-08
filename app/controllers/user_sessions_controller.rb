@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  layout 'standard'
+  layout :choose_layout
 
   def new
     @user_session = UserSession.new
@@ -25,4 +25,10 @@ class UserSessionsController < ApplicationController
     redirect_to root_url
   end
 
+  def choose_layout
+    case action_name
+      when 'home' then 'home'
+      else 'content'
+    end
+  end
 end
