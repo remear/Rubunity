@@ -150,3 +150,10 @@ table.list tbody td { padding:8px 5px 8px 0px; }
 #login-form-home #login-field { width:235px; float:left; }
 #login-form-home #password-field { width:235px; float:left; }
 #login-form-home h3 { border-bottom:1px #ccc solid; padding-bottom:5px; }
+
+#actions { width:350px; text-align:right; float:right }
+
+a.back { background:url(/images/icons/back.png) right no-repeat; padding-right: 20px; }
+a.backleft { background:url(/images/icons/back.png) left no-repeat; padding-left: 20px; }
+a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right: 20px; }
+a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding-left: 20px; }

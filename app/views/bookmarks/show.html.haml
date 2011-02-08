@@ -3,7 +3,7 @@
 = content_for :actions do
   - if @bookmark.user == current_user
     %li= link_to 'Edit', edit_bookmark_path(@bookmark), :class => 'editleft'
-  %li= link_to 'Back', bookmarks_path, :class => 'backleft'
+    %li= link_to 'Back', bookmarks_path, :class => 'backleft'
 
 %p#notice
   
@@ -12,6 +12,8 @@
 %p
   Bookmarked :
   = @bookmark.created_at.to_s(:long)
+  By 
+  = @bookmark.user.full_name
 
 %h2= @bookmark.url
 
@@ -26,21 +28,6 @@
 
 %h2.section
   Comments
-  - if current_user
-    %span{:style => "float:right"}
-      %a.addleft{:href => "#topic_form", :onclick => "$('#comment_form').toggle()"} Add Comment
-%br/
-- if current_user
-  #comment_form{:style => "display:none"}
-    = form_for [@bookmark, Comment.new] do |f|
-      %p
-        = f.label :title
-        = f.text_field :title
-      %p
-        = f.text_area :body, :cols => '103', :rows => '4'
-      %p= f.submit 'Add Comment', :style => 'float:right'
-      .clearer
-      %br/
 #comments
   - if ! @bookmark.comments.blank?
     - @bookmark.comments.each do |comment|
@@ -48,3 +35,15 @@
   - else
     %p.sosumi No comments have been added
 
+%br/
+- if current_user
+  #comment_form
+    = form_for [@bookmark, Comment.new] do |f|
+      %p
+        = f.label :body, "Comment"
+      %p
+        = f.text_area :body, :cols => '40', :rows => '10'
+      %p
+        = f.submit 'Add Comment'
+      .clearer
+      %br/

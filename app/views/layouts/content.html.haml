@@ -5,13 +5,19 @@
     %title Rubunity
     %meta{:content => "", :name => "description"}
       %meta{:content => "", :name => "keywords"}
-        = stylesheet_link_tag 'simple.css'
+        = stylesheet_link_tag 'simple.css', 'base.css'
+        = javascript_include_tag 'jquery', 'application'
   %body
     #gheader
+      = render 'layouts/sessioninfo'
       #logo
       %p.subtext Rubunity - Per general consensus, pants are required
       = render :partial => 'layouts/gnav'
     #gheader-shadow
     #container
+      .clearer
+      #toolbar
+        %ul#actions{:style => "list-style: inline;"}
+          = yield :actions
       #content
         = yield
