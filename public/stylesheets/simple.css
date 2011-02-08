@@ -145,6 +145,18 @@ table.list tbody td { padding:8px 5px 8px 0px; }
 	padding:8px 10px 8px 10px;
 	width:200px;
 }
+#login-form-home input[type=password]
+{
+	height:20px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	border:1px #CCC solid;
+	font-size:14px;
+	padding:8px 10px 8px 10px;
+	width:200px;
+}
+
 #login-form-home .signin { background:url(/images/buttons/signin.png) no-repeat; margin-top:-2px; height:40px; width:126px; border:0px; text-indent:-9999px; }
 #login-form-home .signin:hover { background:url(/images/buttons/signin_over.png) no-repeat; }
 #login-form-home #login-field { width:235px; float:left; }

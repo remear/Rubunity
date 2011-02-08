@@ -9,6 +9,7 @@
     = javascript_include_tag 'jquery', 'application'
   %body
     #gheader
+      = render 'layouts/sessioninfo'
       #logo
       %p.subtext Rubunity - Per general consensus, pants are required
       = render :partial => 'layouts/gnav'
@@ -24,9 +25,13 @@
         #clearer
         %p.subtext You can use almost any format for the date.
       #search-container-shadow
-      #login-form-home
-        %h3 Sign in
-        = form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
-          #login-field= f.text_field :email, :placeholder => 'name@example.com'
-          #password-field= f.text_field :password, :placeholder => 'password'
-          = f.submit 'Sign in', :class=>'signin'
+      - if current_user
+        %p
+          Welcome!
+      - else
+        #login-form-home
+          %h3 Sign in
+          = form_for @user_session, :as => :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
+            #login-field= f.text_field :email, :placeholder => 'name@example.com'
+            #password-field= f.password_field :password, :placeholder => 'password'
+            = f.submit 'Sign in', :class=>'signin'

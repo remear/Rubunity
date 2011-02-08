@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "standard"
+  layout :choose_layout
   before_filter :ensure_not_logged_in, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit] 
   def show
@@ -41,7 +41,13 @@ class UsersController < ApplicationController
     end
   end
   
-  
+ def choose_layout
+   case action_name
+    when 'home' then 'home'
+    else 'content'
+  end
+ end
+
   private
   
   def ensure_not_logged_in
