@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Rubunity</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <%= stylesheet_link_tag 'simple.css' %>
+</head>
+<body>
+  <div id="gheader">
+    <div id="logo"></div>
+    <p class="subtext">Rubunity - Per general consensus, pants are required</p>
+    <%= render :partial => 'layouts/gnav' %>
+  </div>
+  <div id="gheader-shadow"></div>
+
+  <div id="container">
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
