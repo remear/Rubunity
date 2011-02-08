@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   before_filter :require_user, :except => 'index, show'
+  layout 'content'
   # GET /bookmarks
   # GET /bookmarks.xml
   def index
