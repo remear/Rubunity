@@ -1,3 +1,23 @@
-%h1 New bookmark
-= render 'form'
-= link_to 'Back', bookmarks_path
+= content_for :breadcrumbs do
+  %li= link_to 'Bookmarks', bookmarks_path
+  %li Create
+= content_for :actions do
+  %li= link_to 'Cancel', bookmarks_path, :style => "float:right", :class => 'backleft'
+%h1 Create Bookmark
+- content_for(:toolbar) do
+  = link_to 'Cancel', bookmarks_path
+%fieldset.common-form.standard-form
+  - form_for(@bookmark) do |f|
+    = f.error_messages
+    %table{:border => "0", :cellpadding => "5", :cellspacing => "5"}
+      %tr
+        %th= f.label :title
+        %td= f.text_field :title
+      %tr
+        %th= f.label :url
+        %td= f.text_field :url, :size => 70
+      %tr
+        %th{:style => "vertical-align:top"}= f.label :description
+        %td= f.text_area :description, :cols => 85, :rows => 10
+    %br/
+    %p{:style => "text-align:right"}= f.submit 'Create'

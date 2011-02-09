@@ -1,6 +1,6 @@
 #topnav
   - if ! current_user
-    #small_signup{:style => "width:500px; float:right; margin-top:0px"}
+    #small_signup{:style => "width:400px; float:right; margin-top:0px"}
       %span New to prb?
       = link_to 'Sign up now', register_url, :class => "signup-button"
       Have an account? #{link_to 'Sign in', login_path, :class => "signin"}
@@ -22,20 +22,3 @@
             = link_to 'Logout', logout_path
             %span{:style => "padding-left:20px; font-weight:bold"}
               %a.addleft{:href => "http://www.pledgie.com/campaigns/6762?canvas=false", :target => "_new"} Donate
-%fieldset#signin_menu
-  = form_for :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
-    %p
-      %label{:for => "username"} Email
-      = f.text_field :email
-    %p
-      %label{:for => "password"} Password
-      = f.password_field :password
-    %p.remember
-      %input#signin_submit{:tabindex => "6", :type => "submit", :value => "Sign in"}
-        %input#remember{:name => "remember_me", :tabindex => "7", :type => "checkbox", :value => "1"}
-          %label{:for => "remember"} Remember me
-    %p.forgot
-      %a#resend_password_link{:href => "#"} Forgot your password?
-    %p.forgot-username
-      %a#forgot_username_link{:href => "#", :title => "If you remember your password, try logging in with your email"}
-        Forgot your username?
