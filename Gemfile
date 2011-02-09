@@ -6,6 +6,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'acts_as_taggable_on_steroids'
 gem 'thinking-sphinx', '~>2.0.0', :require => 'thinking_sphinx'
 gem 'authlogic', :git => 'git://github.com/esparkman/authlogic.git'
 gem 'haml'
