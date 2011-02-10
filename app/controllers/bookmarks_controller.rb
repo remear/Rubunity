@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-  before_filter :require_no_user, :only => ['index', 'show']
   before_filter :require_user, :except => 'index, show'
   layout 'content'
   # GET /bookmarks
