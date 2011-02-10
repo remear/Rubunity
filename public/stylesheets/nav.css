@@ -77,8 +77,8 @@ div#g-search { width:180px; float:right; text-align:right; margin:-10px 0 20px 0
 #actions li a { font-size:10px !important; padding:10px 10px 10px 20px; }
 
 /* breadcrumbs */
-#breadcrumbs { font-size: 11px; color: #444; overflow: hidden; height: 32px; line-height: 32px; font-weight: bold; float:left; }
-#breadcrumbs a { color: #444; text-decoration: none; _cursor:hand; text-decoration:none;  }
+#breadcrumbs { font-size:11px; color:#444; overflow:hidden; height:31px; line-height:31px; font-weight:bold; float:left; }
+#breadcrumbs a { color:#444; text-decoration:none; _cursor:hand; text-decoration:none;  }
 #breadcrumbs a:hover { color:green; text-decoration: none !important; }
 #breadcrumbs a.home { position:relative; margin: 0; width: 15px; height: 0; padding-top: 35px; overflow: hidden; background:url(/images/icon_home.png) 0 25px no-repeat; }
 #breadcrumbs li { color:green; background:url(/images/breadcrumb_sep.png) left no-repeat; padding:9px 5px 9px 20px; display:inline; }

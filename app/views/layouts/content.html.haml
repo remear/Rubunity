@@ -5,19 +5,28 @@
     %title Rubunity
     %meta{:content => "", :name => "description"}
       %meta{:content => "", :name => "keywords"}
-        = stylesheet_link_tag 'simple.css', 'base.css'
-        = javascript_include_tag 'jquery', 'application'
+        = stylesheet_link_tag 'base.css'
+        = stylesheet_link_tag 'nav.css'
+        = stylesheet_link_tag 'simple.css'
+        
   %body
-    #gheader
-      = render 'layouts/sessioninfo'
-      #logo
-      %p.subtext Rubunity - Per general consensus, pants are required
-      = render :partial => 'layouts/gnav'
-    #gheader-shadow
     #container
+      #globalheader
+        #logo{:onclick => "window.location=\"/\""} &nbsp;
+        #g-nav-util
+          %span.quote{:style=>'float:left'} Rubunity - Per general consensus, pants are required
+          = render :partial => 'layouts/sessioninfo'
+          = render :partial => 'layouts/utilnav'
+        #g-nav
+          = render :partial => 'layouts/gnav'
+        .clearer
+        %br/
       .clearer
       #toolbar
-        %ul#actions{:style => "list-style-type: inline;"}
+        %ul#breadcrumbs
+          %li#home= link_to '&nbsp;'.html_safe, '/'
+          = yield :breadcrumbs
+        %ul#actions
           = yield :actions
       #content
         = yield

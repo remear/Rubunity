@@ -1,18 +1,4 @@
-html, body { height:100%; }
-body
-{
-   font-family: "proxima-nova-1", "proxima-nova-2", Arial, "Liberation Sans", FreeSans, sans-serif;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-   color: #283644;
-   font-size:13px;
-	margin:0px;
-	
-	background: #f2f5f6; /* old browsers */
-	background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* webkit */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* ie */
-}
+
 
 .clearer { clear:both; display:block; margin:0px; padding:0px; height:0px; line-height:1px; font-size:1px; }
 
@@ -34,12 +20,14 @@ body
 
 #gheader p { margin:0px 0 20px 80px; -webkit-font-smoothing:subpixel-antialiased; color:#94a4b1; }
 
-#gheader ul { margin:0 0 0 40px; font-size:14px; color:#24689E; }
-#gheader ul li
+#gheader ul { margin:0 0 0 40px; color:#24689E; }
+#gheader ul a
 {
 	display:inline;
 	margin-right:30px;
 	-webkit-font-smoothing:subpixel-antialiased;
+	padding:5px 0 5px 0;
+	font-size:12px; 
 }
 
 #gheader-shadow

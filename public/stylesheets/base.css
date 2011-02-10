@@ -10,11 +10,25 @@ table { border-collapse: collapse; border-spacing: 0; }
 .clear { clear:both; }
 .clearer { clear: both; display: block; margin: 0; padding: 0; height: 0; line-height: 1px; font-size: 1px; }
 
-a { font-size:10px; }
 a, a:link { color:#0033cc; }
 a, a:link { color:#0085cf; }
 a:active,a:hover { color:green }
 
+html, body { height:100%; }
+body
+{
+   font-family: "proxima-nova-1", "proxima-nova-2", Arial, "Liberation Sans", FreeSans, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+   color: #283644;
+   font-size:13px;
+	margin:0px;
+	
+	background: #f2f5f6; /* old browsers */
+	background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* ie */
+}
 
 /* pagination */
 .pagination { padding: 2px; margin:30px 3px; text-align:center; }
