@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   layout :choose_layout
   
   def home
+    @recent_bookmarks = Bookmark.all(:limit => 3)
   end
   
   def community
@@ -13,7 +14,7 @@ class PagesController < ApplicationController
   def choose_layout
     case action_name
       when 'home' then 'home'
-      else 'content'
+      else 'redesign'
     end
   end
 end
