@@ -3,6 +3,8 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Rubunity
+    - if params[:controller] == 'bookmarks'
+      = stylesheet_link_tag 'bookmarks.css'
     = stylesheet_link_tag 'redesign.css'
     #header
       .header_holder

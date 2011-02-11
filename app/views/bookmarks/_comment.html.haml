@@ -1,5 +1,8 @@
 .comment.normal
   %div{:style => "width:620px; float:left; padding:0 0 0 20px;"}
+    .author{:style => "width:80px; float:left;"}
+      = image_tag comment.user.profile_image('medium') do
+        comment.user.nickname
     %p.info
       Posted
       %strong= comment.created_at.to_s(:long)
@@ -7,7 +10,6 @@
       %strong= comment.user.nickname
     = comment.body
     %hr/
-  .author{:style => "width:80px; float:right;"}
-    = image_tag comment.user.profile_image comment.user.nickname
+  
   .clearer
 
