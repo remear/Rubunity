@@ -1,5 +1,6 @@
 = content_for :breadcrumbs do
-  %li Bookmarks
+  %li= link_to 'Bookmarks', bookmarks_path
+  %li= @bookmark.title
 = content_for :actions do
   - if @bookmark.user == current_user
     %li= link_to 'Edit', edit_bookmark_path(@bookmark), :class => 'editleft'
@@ -9,11 +10,12 @@
   
 %h1{:style => 'float:left'}= @bookmark.title
 
-%p{:class => 'sosumi', :style => 'float:right'}
-  Bookmarked :
-  = @bookmark.created_at.to_s(:long)
-  By 
-  = @bookmark.user.full_name
+%ul.sosumi{:style => 'float:right; list-style:none;'}
+  %li
+    Bookmarked :
+    = "<strong>#{@bookmark.created_at.to_s(:long)}</strong>".html_safe
+    By 
+    = "<strong>#{@bookmark.user.full_name}</strong>".html_safe
 .clearer
 
 %h3= @bookmark.url
@@ -27,7 +29,7 @@
   = link_to @bookmark.url do
     = image_tag '/images/buttons/btn_go_to_site_red.png'
 
-%h2.section{:style => 'margin-top:50px;'}
+%h2.section{:style => 'margin:50px 0 20px 0;'}
   Comments
 #comments
   - if ! @bookmark.comments.blank?
@@ -43,7 +45,7 @@
       %p
         = f.label :body, "Comment"
       %p
-        = f.text_area :body, :cols => '40', :rows => '10', :class => 'comment-field'
+        = f.text_area :body, :cols => '120', :rows => '10', :class => 'comment-field'
       %p{:style => 'float:right'}
         = image_submit_tag '/images/buttons/add_comment.png'
       .clearer
