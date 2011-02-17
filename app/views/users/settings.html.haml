@@ -35,12 +35,4 @@
     = f.password_field :password_confirmation, :id => "password_confirmation"
   
   %p
-    = f.label :roles
-    - for role in User::ROLES
-      = check_box_tag "user[roles][]", role, @user.roles.include?(role)
-      = h role.humanize
-    = hidden_field_tag "user[roles][]"
-      
-  
-  %p
     = f.submit 'Submit'

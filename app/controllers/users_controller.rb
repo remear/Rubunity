@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   layout 'standard'
-  before_filter :require_admin, :only => [:index, :show, :destroy]
+  before_filter :require_admin, :only => [:index, :show, :edit, :destroy]
   before_filter :ensure_not_logged_in, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit] 
+  before_filter :require_user, :only => [:show, :settings] 
   
   def index
     @users = User.all
@@ -16,8 +16,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
-
   def edit
+    @user = User.find(params[:id])
+  end
+  def settings
     if !current_user
       redirect_to root_url
       return false
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
   
   
   def update
-    @user = current_user
+    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = 'Profile updated!'
       redirect_to root_url
