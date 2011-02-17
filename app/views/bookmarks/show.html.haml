@@ -29,8 +29,22 @@
   = link_to @bookmark.url do
     = image_tag '/images/buttons/btn_go_to_site_red.png'
 
-%h2.section{:style => 'margin:50px 0 20px 0;'}
-  Comments
+%h2.section{:style => 'margin:50px 0 20px 0;'} Topics
+
+- if ! @bookmark.topic_list.blank?
+  = @bookmark.topic_list
+- else
+  %p.sosumi No topics tagged
+  
+= form_for :topic, bookmark_add_topic_path do |f|
+  = text_field_tag :name
+
+%h2.section{:style => 'margin:50px 0 20px 0;'} Ruby Versions
+
+%h2.section{:style => 'margin:50px 0 20px 0;'} Ruby Versions
+
+%h2.section{:style => 'margin:50px 0 20px 0;'} Comments
+
 #comments
   - if ! @bookmark.comments.blank?
     - @bookmark.comments.each do |comment|
