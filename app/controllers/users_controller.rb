@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
-  layout :choose_layout
+  layout 'standard'
+  before_filter :require_admin, :only => [:index, :show, :destroy]
   before_filter :ensure_not_logged_in, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit] 
+  
+  def index
+    @users = User.all
+  end
+
   def show
     @user = current_user
   end

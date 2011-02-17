@@ -20,4 +20,10 @@ Rubunity::Application.routes.draw do
   
   #pages
   match "botusage" => "pages#irc_bot_usage", :as => "bot_usage"
+
+  # admin
+  match 'admin' => 'admin#index', :as => :admin
+  scope "/admin" do
+    resources :users
+  end
 end

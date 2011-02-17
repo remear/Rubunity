@@ -1,6 +1,9 @@
 = form_for(@user) do |f|
   = f.error_messages
-  
+  %p
+    You Current Rubunian Level:
+    %br/
+    @user.role
   %p
     = f.label :nickname
     %br
@@ -30,6 +33,15 @@
     = f.label :password_confirmation
     %br
     = f.password_field :password_confirmation, :id => "password_confirmation"
+  
+  - if current_user.admin?
+    %p
+      = f.label :roles
+      - for role in User::ROLES
+        = check_box_tag "user[roles][]", role, @user.roles.include?(role)
+        = h role.humanize
+      = hidden_field_tag "user[roles][]"
+      
   
   %p
     = f.submit 'Submit'

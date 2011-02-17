@@ -33,8 +33,27 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def access_denied
+    store_location
+    redirect_to login_path
+  end
+
+  def require_login
+    current_user || access_denied
+  end
+
+  def admin_access_denied
+    flash[:warning] = "You have insuffcient access for the area you requested."
+    redirect_back_or_default("/")
+  end
+  
+  def require_admin
+    require_login
+    current_user.admin? || admin_access_denied
+  end
+
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
   end
 
   def redirect_back_or_default(default)

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210044641) do
+ActiveRecord::Schema.define(:version => 20110217013628) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title"
@@ -30,6 +37,12 @@ ActiveRecord::Schema.define(:version => 20110210044641) do
     t.text     "body"
     t.integer  "commentable_id"
     t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,6 +74,9 @@ ActiveRecord::Schema.define(:version => 20110210044641) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nickname"
+    t.boolean  "admin",             :default => false
+    t.integer  "roles_mask"
+    t.string   "role"
   end
 
 end
