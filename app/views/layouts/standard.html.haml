@@ -9,7 +9,7 @@
     #header
       .header_holder
         .logo
-        .nav
+        #nav.bookmarks
           = render :partial => 'layouts/gnav'
         .divider
     #toolbar
@@ -22,27 +22,6 @@
     #content
       .content_holder
         = yield
-
-    #footer_top
-      .holder
-        .left
-          #widget_recent_entries
-            %h3 Recent Posts
-            %ul
-              %li
-                %a{:href => "#", :title => "Claritas Etiam Processus Dinamicus"} Claritas Etiam Processus Dinamicus
-        .right
-          #twitterWidget
-            #twitter
-              %h3 Twitter Updates
-              %ul#twitter_update_list
-                %li
-              %script{:src => "http://twitter.com/javascripts/blogger.js", :type => "text/javascript"}
-              %script{:src => "http://twitter.com/statuses/user_timeline/remear.json?callback=twitterCallback2&count=3", :type => "text/javascript"}
-              .dasheddivider
-              %p{:align => "right"}
-                %a.rightlink.png_crop{:href => "http://www.twitter.com/remear/"} Follow us on Twitter
-        .divider
     #footer_bottom
       .holder
         .copy
@@ -51,21 +30,5 @@
             %a{:href => "http://test.nattywp.com/business"} business Demo
           All Rights Reserved.
         .links
-          %ul
-            %li.current_page_item
-              %a{:href => "http://test.nattywp.com/business"}
-                %span Home
-            %li
-              %a{:href => "http://test.nattywp.com/business/category/blog/"}
-                %span Blog
-            %li.page_item.page-item-2
-              %a{:href => "http://test.nattywp.com/business/about/", :title => "About"} About
-            %li.page_item.page-item-101
-              %a{:href => "http://test.nattywp.com/business/archives/", :title => "Archives"} Archives
-            %li.page_item.page-item-211
-              %a{:href => "http://test.nattywp.com/business/full-width/", :title => "Full width"} Full width
-            %li.page_item.page-item-169
-              %a{:href => "http://test.nattywp.com/business/sitemap/", :title => "Sitemap"} Sitemap
-            %li.page_item.page-item-226
-              %a{:href => "http://test.nattywp.com/business/preset-styles/", :title => "Preset Styles"} Preset Styles
+          = render :partial => 'layouts/gnav'
         %div{:style => "clear:both;"}
