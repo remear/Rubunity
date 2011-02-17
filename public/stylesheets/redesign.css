@@ -63,7 +63,7 @@ a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding:0px 
 	-moz-border-radius:15px;
 	-webkit-box-shadow: 0px -1px 10px #BBB;
 }
-#nav.bookmarks li#gnav-bookmarks a:hover { background:#032f4f !important; }
+#nav.bookmarks li#gnav-bookmarks a:hover { background:#EAEAEA !important; }
 
 #toolbar
 {
