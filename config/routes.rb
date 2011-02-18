@@ -4,11 +4,10 @@ Rubunity::Application.routes.draw do
   resources :bookmarks do
     resources :comments
   end
-
-  root :to => "pages#home"
+  match "add_topic" => "bookmarks#add_topic", :as => "bookmark_add_topic"
 
   resources :users, :user_sessions
- 
+
   match "login" => "user_sessions#new", :as => "login"
   match "logout" => "user_sessions#destroy", :as => "logout"
   match "register" => "users#new", :as => "register"

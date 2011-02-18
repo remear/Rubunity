@@ -73,6 +73,9 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def add_topic
+  end
+  
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.xml
   def destroy
