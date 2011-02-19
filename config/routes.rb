@@ -1,4 +1,6 @@
 Rubunity::Application.routes.draw do
+  root :to => "pages#home"
+
   resources :comments
 
   resources :bookmarks do

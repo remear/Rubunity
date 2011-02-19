@@ -1,7 +1,8 @@
 = content_for :breadcrumbs do
   %li Bookmarks
 = content_for :actions do
-  %li= link_to 'New Bookmark', new_bookmark_path, :style => "float:right", :class => 'addleft'
+  - if can? :create, @bookmark
+    %li= link_to 'New Bookmark', new_bookmark_path, :style => "float:right", :class => 'addleft'
 
 = content_for :contentbar do
   #custom_search

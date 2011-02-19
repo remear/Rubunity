@@ -1,2 +1,6 @@
-%h2 Admin Portal Index
-%p Manage users here
+%h2 Manage User by clicking on their name below
+%h2 User
+- @users.each do |user|
+  %ul
+    %li= link_to user.full_name, [:edit, user]
+    = user.roles
