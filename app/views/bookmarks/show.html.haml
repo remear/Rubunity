@@ -30,19 +30,45 @@
     = image_tag '/images/buttons/btn_go_to_site_red.png'
 
 %h2.section{:style => 'margin:50px 0 20px 0;'} Topics
+#topics
+  - if ! @bookmark.topic_list.blank?
+    - @bookmark.topic_list.each do |topic|
+      %span= topic
+  - else
+    %p.sosumi No topics tagged
+.clearer
 
-- if ! @bookmark.topic_list.blank?
-  = @bookmark.topic_list
-- else
-  %p.sosumi No topics tagged
+= form_tag bookmark_add_topic_path(@bookmark), :remote => true do
+  = text_field_tag :topic
+  = submit_tag
+
+
+%h2.section{:style => 'margin:50px 0 20px 0;'} Rails Versions
+#rails-versions
+  - if ! @bookmark.rails_version_list.blank?
+    - @bookmark.rails_version_list.each do |rails_version|
+      %span= rails_version
+  - else
+    %p.sosumi No rails versions tagged
+.clearer
+
+= form_tag bookmark_add_rails_version_path(@bookmark), :remote => true do
+  = text_field_tag :rails_version
+  = submit_tag
   
-= form_for :topic, bookmark_add_topic_path do |f|
-  = text_field_tag :name
-
 %h2.section{:style => 'margin:50px 0 20px 0;'} Ruby Versions
+#ruby-versions
+  - if ! @bookmark.ruby_version_list.blank?
+    - @bookmark.ruby_version_list.each do |ruby_version|
+      %span= ruby_version
+  - else
+    %p.sosumi No ruby versions tagged
+.clearer
 
-%h2.section{:style => 'margin:50px 0 20px 0;'} Ruby Versions
-
+= form_tag bookmark_add_ruby_version_path(@bookmark), :remote => true do
+  = text_field_tag :ruby_version
+  = submit_tag
+  
 %h2.section{:style => 'margin:50px 0 20px 0;'} Comments
 
 #comments
