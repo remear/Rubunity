@@ -4,22 +4,23 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Rubunity
     = stylesheet_link_tag 'redesign.css'
-
+    = javascript_include_tag 'rails'
   %body
     #container
       %form{:action => "", :method => "get"}
         .textInput
-          %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => "", :size => 100}/
+          %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
       .clearer
       %p.subtext searches bookmarks, guides, comments, ruby & rails versions
-    - if ! current_user
-      #login-form-home
-        %h3 Sign in
-        = form_for @user_session, :as => :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
-          #login-field= f.text_field :email, :placeholder => 'name@example.com'
-          #password-field= f.password_field :password, :placeholder => 'password'
-          = f.submit 'Sign in', :class=>'signin'
-
+      - if ! current_user
+        #login-form-home
+          %h3 Sign in
+          = form_for @user_session, :as => :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
+            #login-field= f.text_field :email, :placeholder => 'name@example.com'
+            #password-field= f.password_field :password, :placeholder => 'password'
+            = f.submit 'Sign in', :class=>'signin'
+        %br
+          
     #footer_top
       .holder
         .left
