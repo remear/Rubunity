@@ -1,7 +1,7 @@
 fieldset { border:0px; }
 
-.clearer { clear: both; display: block; margin: 0; padding: 0; height: 0; line-height: 1px; font-size: 1px; }
-.sosumi { font-size: 10px !important; color:#76797c; }
+.clearer { clear:both; display:block; margin:0; padding:0; height:0; line-height:1px; font-size:1px; }
+.sosumi { font-size:10px !important; color:#76797c; }
 #header, #container { background:#EAEAEA; margin:0px; color:#333;  }
 #container { padding-top:100px; min-height:250px; }
 #content code {margin:0pt; padding:1px 3px; background:rgb(255, 255, 225) none repeat scroll 0% 0%; font-family:Monaco,monospace; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; line-height:normal; font-size-adjust:none; font-stretch:normal; -x-system-font:none;}
@@ -31,15 +31,20 @@ html > body .content li {margin:7px 0 8px 10px;}
 .post.mainpost {padding-bottom:20px;}
 
 /* nav */
-a.add { background:url(/images/icons/plus_stroke.png) right no-repeat; padding-right:30px; }
-a.addleft { background:url(/images/icons/plus_stroke.png) left 8px no-repeat; padding:0px 0 0px 30px; }
-a.remove { background:url(/images/icons/minus.png) right no-repeat; padding-right:30px; }
-a.removeleft { background:url(/images/icons/minus.png) left no-repeat; padding-left:30px; }
-a.back { background:url(/images/icons/back.png) right no-repeat; padding-right:30px; }
-a.backleft { background:url(/images/icons/back.png) left no-repeat; padding:0px 0px 0px 30px;}
-a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right:30px; }
-a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding:0px 0px 0px 30px; }
+#header #nav a.add { background:url(/images/icons/plus_stroke.png) right no-repeat; padding-right:30px; }
+#header #nav a.addleft { background:url(/images/icons/plus_stroke.png) left 8px no-repeat; padding:0px 0 0px 30px; }
+#header #nav a.removeleft { background:url(/images/icons/minus.png) left no-repeat; padding-left:30px; }
+#header #nav a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding:0px 0px 0px 30px; }
 
+/* Linkx */
+a.add { background:url(/images/icons/plus.png) right no-repeat; padding-right: 20px; }
+a.addleft { background:url(/images/icons/plus.png) left no-repeat; padding-left: 20px; }
+a.remove { background:url(/images/icons/minus.png) right no-repeat; padding-right: 20px; }
+a.removeleft { background:url(/images/icons/minus.png) left no-repeat; padding-left: 20px; }
+a.back { background:url(/images/icons/back.png) right no-repeat; padding-right: 20px; }
+a.backleft { background:url(/images/icons/back.png) left no-repeat; padding-left: 20px; }
+a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right: 20px; }
+a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding-left: 20px; }
 
 /* Top Navigation */
 #nav { float:right; text-align:right; }

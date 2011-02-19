@@ -8,8 +8,10 @@
     %title Rubunity
     - if params[:controller] == 'bookmarks'
       = stylesheet_link_tag 'bookmarks.css'
+    = stylesheet_link_tag 'facebox.css'
     = stylesheet_link_tag 'redesign.css'
     = javascript_include_tag :defaults
+    = javascript_include_tag 'facebox'
     
     #header
       .header_holder
