@@ -1,4 +1,8 @@
 $(document).ready(function() 
 {
-  $('a[rel*=facebox]').facebox()
+
+	$('a[rel*=fancybox]').fancybox({
+		'showNavArrows'      : false,
+		'hideOnContentClick' : false
+	});
 });

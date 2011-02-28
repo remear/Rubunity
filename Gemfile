@@ -12,6 +12,9 @@ gem 'authlogic', :git => 'git://github.com/esparkman/authlogic.git'
 gem 'haml'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'cancan'
+gem 'httpclient'
+gem 'json'
+gem 'version_sorter'
 
 group :development do
   gem 'nifty-generators'

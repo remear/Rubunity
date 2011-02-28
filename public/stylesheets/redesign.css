@@ -47,10 +47,10 @@ a.edit { background:url(/images/icons/edit.png) right no-repeat; padding-right: 
 a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding-left: 20px; }
 
 /* Top Navigation */
-#nav { float:right; text-align:right; }
-#nav ul { margin:0 auto; padding:0; list-style:none; line-height:1; z-index:100; }
+#nav { float:right; text-align:right; min-width:600px; margin-bottom:10px; }
+#nav ul { margin:0 20px auto; padding:0; list-style:none; line-height:1; z-index:100; }
 #nav ul a { display:block; line-height:23px; padding:0 15px 0px 15px; z-index:100; text-decoration:none; }
-#nav ul li { float:left; padding:8px 5px 10px 5px; float:left; }
+#nav ul li { float:left; margin-left:10px; float:left; }
 #nav ul li a { color:#333; }
 #nav ul li a:hover
 {
@@ -73,9 +73,19 @@ a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding-left
 #toolbar
 {
 	background: #2b4b6e; /* old browsers */
+	min-width:950px !important;
 }
-#toolbar #breadcrumbs { width:475px; float:left; margin:0px; }
+#toolbar #breadcrumbs { float:left; margin:0px; }
 
+/* session info */
+#sessioninfo { font-size:11px; padding-right:60px; }
+#sessioninfo a { color:#555; }
+#sessioninfo img
+{
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
 
 #breadcrumbs { font-size:11px; color:#444; overflow:hidden; height:31px; line-height:31px; font-weight:bold; float:left; }
 #breadcrumbs a { color:lightblue; text-decoration:none; _cursor:hand; text-decoration:none;  }
@@ -96,28 +106,6 @@ a.editleft { background:url(/images/icons/edit.png) left no-repeat; padding-left
 
 
 .subtext { text-align:center; font-size:12px; color:#b8babd; width:500px; margin:20px auto 0 auto; }
-
-
-
-/*input[type=text], input[type=password], textarea
-{
-	outline:none;
-   transition: all 0.25s ease-in-out;
-   -webkit-transition: all 0.25s ease-in-out;
-   -moz-transition: all 0.25s ease-in-out;
-   border-radius:3px;
-   -webkit-border-radius:3px;
-   -moz-border-radius:3px;
-   border:1px solid rgba(0,0,0, 0.2);
-}
-
-input[type=text]:focus, input[type=password]:focus, textarea:focus
-{
-   box-shadow: 0 0 20px rgba(81,203,238, 1);
-   -webkit-box-shadow: 0 0 20px rgba(81,203,238, 1); 
-   -moz-box-shadow: 0 0 5px rgba(81,203,238, 1);
-   border:1px solid rgba(81,203,238, 0.8); 
-}*/
 
 input[type=text], input[type=password], textarea {
     border:1px solid #999999;
@@ -211,8 +199,37 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
 }
 
 /* rails versions */
-#rails-versions { clear:both; }
-#rails-versions span
+#rails-version-list ul { list-style:none; text-indent:0px; padding-left:0px; line-height:2.5em; }
+#rails-version-list ul li { font-size:12px; display:inline; padding:5px; }
+
+#rails-version-list ul li
+{
+	cursor:pointer;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	
+	background: #ffffff; /* old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* firefox */
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* webkit */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* ie */
+}
+
+#rails-version-list ul li.active
+{
+	
+	background: #feffe8; /* old browsers */
+	background: -moz-linear-gradient(top, #feffe8 0%, #d6dbbf 100%); /* firefox */
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffe8), color-stop(100%,#d6dbbf)); /* webkit */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* ie */
+}
+}
+
+
+/*#rails-versions span
 {
 	padding:2px 10px 2px 10px;
 	background:lightblue;
@@ -224,15 +241,15 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
 	-webkit-box-shadow:2px 2px 2px #EAEAEA;
 	
 	color:#FFFFFF;
-	background: #ff3019; /* old browsers */
-	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* webkit */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* ie */
+	background: #ff3019;
+	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );
 }
-
+*/
 
 /* ruby versions */
-#ruby-versions { clear:both; }
+/*#ruby-versions { clear:both; }
 #ruby-versions span
 {
 	padding:2px 10px 2px 10px;
@@ -246,14 +263,11 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
 	
 	color:#FFFFFF;
 	
-	background: #a90329; /* old browsers */
-	background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* webkit */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* ie */
-}
-
-
-
+	background: #a90329;
+	background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+}*/
 
 /* CSS Core Document */
 
@@ -269,10 +283,9 @@ body, html
 	-webkit-font-smoothing: antialiased;*/
    background-color:#02243D;
    color:#000000;
-   background-image:url(images/bg.gif);
    line-height:20px;
    background-repeat:repeat-x;
-	margin-top:0px;
+	margin:0px;
 }
 
 a { 
@@ -303,11 +316,12 @@ h2 {
     color:#191b1c;
 }
 h3 {
-    font-size:18px;
+    font-size:16px;
     color:#191b1c;
     font-weight:normal;
 }
 h4 {
+	font-size:14px;
     font-weight:normal;
     color:#a5bb39; 
 }
