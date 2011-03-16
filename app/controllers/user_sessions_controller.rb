@@ -9,7 +9,6 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Hello!"
       redirect_to root_url, :notice => "Hello!"
     else
       flash[:notice] = "Invlaid Credentials"

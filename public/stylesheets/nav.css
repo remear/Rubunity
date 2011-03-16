@@ -4,7 +4,7 @@ div#g-nav-util ul li a { color:#000000; border-right: 1px solid #AAA; padding-ri
 div#g-nav-util ul li.last a { border-right: none; }
 div#g-nav-util ul li a:hover { color:#03b; }
 
-div#g-nav { width:800px; float:left; font-size:11px; margin-left:-20px; }
+div#g-nav { width:800px; float:left; font-size:11px; margin-left:-20px; position: relative; z-index: 99; }
 div#g-nav ul { list-style:none; margin:0px; padding:0px; color:#000; }
 div#g-nav ul li { display:inline; }
 div#g-nav ul li a
