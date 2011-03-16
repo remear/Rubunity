@@ -1,9 +1,10 @@
 = form_for(@user) do |f|
   = f.error_messages
-  %p
-    You Current Rubunian Level:
-    %br/
-    = @user.roles
+  - if current_user
+    %p
+      Your Current Rubunian Level:
+      %br/
+      = @user.roles
   %p
     = f.label :nickname
     %br
@@ -34,12 +35,13 @@
     %br
     = f.password_field :password_confirmation, :id => "password_confirmation"
   
-  %p
-    = f.label :roles
-    - for role in User::ROLES
-      = check_box_tag "user[roles][]", role, @user.roles.include?(role)
-      = h role.humanize
-    = hidden_field_tag "user[roles][]"
+  - if admin?
+    %p
+      = f.label :roles
+      - for role in User::ROLES
+        = check_box_tag "user[roles][]", role, @user.roles.include?(role)
+        = h role.humanize
+      = hidden_field_tag "user[roles][]"
       
   
   %p

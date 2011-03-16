@@ -269,7 +269,7 @@ body, html
 	-webkit-font-smoothing: antialiased;*/
    background-color:#02243D;
    color:#000000;
-   background-image:url(images/bg.gif);
+/*   background-image:url(/images/bg.gif);*/
    line-height:20px;
    background-repeat:repeat-x;
 	margin-top:0px;
@@ -511,3 +511,29 @@ a:hover { color:#3A3D43; }
 	color:#74828C;
 }
 #footer_bottom { background-color:#02243D; }
+
+#logo {
+  width: 135px;
+  margin: 0 auto;
+  padding-bottom: 115px;
+}
+
+#logo img {
+  width: 130px;
+  margin: 0 auto;
+}
+
+.sign_up {
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 50px;
+}
+
+.sign_up a {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.sign_up a:hover {
+  text-decoration: none;
+}

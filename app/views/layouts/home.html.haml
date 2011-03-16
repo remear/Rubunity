@@ -7,6 +7,8 @@
     = javascript_include_tag 'rails'
   %body
     #container
+      #logo
+        %img{:src => 'images/logo_lg.png'}
       %form{:action => "", :method => "get"}
         .textInput
           %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
@@ -19,8 +21,12 @@
             #login-field= f.text_field :email, :placeholder => 'name@example.com'
             #password-field= f.password_field :password, :placeholder => 'password'
             = f.submit 'Sign in', :class=>'signin'
+      %p.sign_up
+        or
+        = link_to "Register", '/register'
+        to join the community
         %br
-          
+        
     #footer_top
       .holder
         .left
