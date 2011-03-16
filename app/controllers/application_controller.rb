@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
   
   def admin?
-    current_user && current_user.roles?('admin')
+    current_user && current_user.role?('admin')
   end
 
   def current_user_session
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return @current_user if defined?(@current_user)
-    @current_user = current_user_session && current_user_session.record
+    @current_user = current_user_session && current_user_session.user
   end
 
   def require_user
@@ -56,8 +56,8 @@ class ApplicationController < ActionController::Base
   end
   
   def require_admin
-    require_login
-    current_user.admin? || admin_access_denied
+    #require_login
+    admin? || admin_access_denied
   end
 
   def store_location
