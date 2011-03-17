@@ -1,14 +1,19 @@
 !!!
-%html{:xmlns => "http://www.w3.org/1999/xhtml"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %title Rubunity
-    = stylesheet_link_tag 'redesign'
-    = javascript_include_tag 'jquery', 'rails'
+%html
+
+  %head  
+    %title
+      Rubunity - Welcome
+    = stylesheet_link_tag 'application', 'redesign', 'flash'
+    = javascript_include_tag 'jquery', 'rails', 'application', 'facebox'
+    
   %body
-    #container
-      #logo
-        %img{:src => 'images/logo_lg.png'}
+    #home_container
+      #container
+        = render 'layouts/header'
+    
+      #home_logo
+        %img{:src => 'images/rubunity.png'}
       %form{:action => "", :method => "get"}
         .textInput
           %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
@@ -35,7 +40,7 @@
             %ul
               - @recent_bookmarks.each do |bookmark|
                 %li= link_to bookmark.title, bookmark
-                          
+
         .right
           #twitterWidget
             #twitter
@@ -48,10 +53,5 @@
               %p{:align => "right"}
                 %a.rightlink.png_crop{:href => "http://www.twitter.com/remear/"} Follow us on Twitter
         .divider
-
-    #footer_bottom
-      .holder
-        .copy Rubunity - Per general consensus, pants are required. Copyright  2011. All Rights Reserved.
-        .links
-          %ul
-        %div{:style => "clear:both;"}
+        
+    = render 'layouts/footer'

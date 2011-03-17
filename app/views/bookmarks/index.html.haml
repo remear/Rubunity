@@ -1,5 +1,8 @@
+- title 'Bookmarks'
+
 = content_for :breadcrumbs do
   %li Bookmarks
+  
 = content_for :actions do
   - if can? :create, @bookmark
     %li= link_to 'New Bookmark', new_bookmark_path, :style => "float:right", :class => 'addleft'
