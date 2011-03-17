@@ -325,7 +325,10 @@ ol,ul {
   margin-bottom: 5px;
 }
 
-#login-form-home input[type="password"], #new_user input[type="password"] {
+#login-form-home input[type="password"], 
+#new_user input[type="password"], 
+#new_user_session input[type="password"],
+.edit_user input[type="password"] {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border: 1px solid #CCCCCC;
@@ -335,7 +338,10 @@ ol,ul {
   width: 200px;
 }
 
-#login-form-home input[type="text"], #new_user input[type="text"] {
+#login-form-home input[type="text"], 
+#new_user input[type="text"], 
+#new_user_session input[type="text"],
+.edit_user input[type="text"] {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border: 1px solid #CCCCCC;
@@ -355,7 +361,7 @@ ol,ul {
   width: 235px;
 }
 
-#login-form-home .signin {
+.signin {
   background: url(/images/buttons/signin.png) no-repeat scroll 0 0 transparent;
   border: 0 none;
   height: 40px;
@@ -375,20 +381,22 @@ ol,ul {
   z-index: 99;
 }
 
-#new_user label {
+#new_user label, 
+#new_user_session label,
+.edit_user label {
   line-height: 1.5em;
   padding-left: 8px;
 }
 
-#new_user input[type="submit"] {
-  background: url(/images/buttons/signin.png) no-repeat scroll 0 0 transparent;
+.edit_user input[type="submit"] {
+  background: url(/images/buttons/submit.png) no-repeat scroll 0 0 transparent;
   border: 0 none;
   height: 40px;
   text-indent: -9999px;
   width: 126px;
 }
 
-#new_user p {
+#new_user p, #new_user_session p, .edit_user p {
   padding-top: 10px;
 }
 

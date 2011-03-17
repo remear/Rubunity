@@ -1,3 +1,11 @@
+- title "Settings"
+
+= content_for :breadcrumbs do
+  %li Settings
+  
+%h1.settings Settings
+%br/
+
 = form_for(@user) do |f|
   = f.error_messages
   %p

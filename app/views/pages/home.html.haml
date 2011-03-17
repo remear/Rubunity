@@ -1,0 +1,27 @@
+- title "Welcome"
+
+#home_container
+  #container
+    = render 'layouts/header'
+
+  #home_logo
+    %img{:src => 'images/rubunity.png'}
+  %form{:action => "", :method => "get"}
+    .textInput
+      %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
+  .clearer
+  %p.subtext searches bookmarks, guides, comments, ruby & rails versions
+  - if ! current_user
+    #login-form-home
+      %h3 Sign in
+      = form_for @user_session, :as => :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
+        #login-field= f.text_field :email, :placeholder => 'name@example.com'
+        #password-field= f.password_field :password, :placeholder => 'password'
+        = f.submit 'Sign in', :class=>'signin'
+        
+  %p.sign_up
+    - if ! current_user
+      or
+      = link_to "Register", '/register'
+      to join the community
+      %br

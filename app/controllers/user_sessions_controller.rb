@@ -11,8 +11,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to root_url, :notice => "Hello!"
     else
-      flash[:notice] = "Invlaid Credentials"
-      render :action => 'new'
+      redirect_to new_user_session_path, :notice => "Invlaid Credentials"
     end
   end
   
@@ -27,7 +26,7 @@ class UserSessionsController < ApplicationController
   def choose_layout
     case action_name
       when 'home' then 'home'
-      else 'content'
+      else 'application'
     end
   end
 end
