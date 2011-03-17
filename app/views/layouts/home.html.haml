@@ -9,9 +9,9 @@
     #container
       #logo
         %img{:src => 'images/logo_lg.png'}
-      %form{:action => "", :method => "get"}
+      %form{:action => "/search", :method => "get"}
         .textInput
-          %input{:name => "z", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
+          %input{:name => "q", :placeholder => "Enter a search term...", :type => "text", :value => ""}/
       .clearer
       %p.subtext searches bookmarks, guides, comments, ruby & rails versions
       - if ! current_user

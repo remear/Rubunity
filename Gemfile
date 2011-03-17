@@ -7,7 +7,7 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 gem 'acts-as-taggable-on'
-gem 'thinking-sphinx', '~>2.0.0', :require => 'thinking_sphinx'
+gem 'thinking-sphinx', '2.0.1', :require => 'thinking_sphinx'
 gem 'authlogic', :git => 'git://github.com/esparkman/authlogic.git'
 gem 'haml'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
