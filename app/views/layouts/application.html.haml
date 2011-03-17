@@ -5,7 +5,7 @@
     %title
       Rubunity
       = "- " + yield(:title) unless !:title
-    = stylesheet_link_tag 'application', 'flash'
+    = stylesheet_link_tag 'application', 'flash', 'facebox'
     = javascript_include_tag 'jquery', 'rails', 'application', 'facebox'
     = csrf_meta_tag
 

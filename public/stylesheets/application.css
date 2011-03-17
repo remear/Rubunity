@@ -459,6 +459,10 @@ ol,ul {
 	*background-position: 0 3px!important;
 }
 
+.button_img {
+  margin-top: 20px;
+}
+
 .clear {
   clear: both;
 }
@@ -478,14 +482,6 @@ ol,ul {
   font-size: 1px;
   height: 0;
   line-height: 0;
-}
-
-.edit_user input[type="submit"] {
-  background: url(/images/buttons/submit.png) no-repeat scroll 0 0 transparent;
-  border: 0 none;
-  height: 40px;
-  text-indent: -9999px;
-  width: 126px;
 }
 
 .signin {
