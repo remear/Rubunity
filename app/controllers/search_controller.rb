@@ -2,16 +2,17 @@ class SearchController < ApplicationController
   layout 'standard', :except => 'index'
   
   def query
-    if params[:query]
-      if params[:query].include? "comments:"
-        @params = params[:query].split(':')
+    logger.debug "!!!!!!!!!!!!!!!!!!!! blah"
+    if params[:q]
+      if params[:q].include? "comments:"
+        @params = params[:q].split(':')
         @type = @params[0]
         @query = @params[1]
         @results = Comment.search @query, :star => true, :page => params[:page], :per_page => 20
-      elsif params[:query].include? "tags:"
-        @results = ThinkingSphinx.search params[:query], :page => params[:page], :per_page => 20
+      elsif params[:q].include? "tags:"
+        @results = ThinkingSphinx.search params[:q], :page => params[:page], :per_page => 20
       else
-        @results = Bookmark.search params[:query], :page => params[:page], :per_page => 20
+        @results = ThinkingSphinx.search params[:q], :page => params[:page], :per_page => 20
       end
     end
     

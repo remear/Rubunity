@@ -7,11 +7,14 @@
       %ul
         - @bookmark.errors.full_messages.each do |msg|
           %li= msg
-  
-  %p
-    URL : 
-    = f.text_field :url
-  
+  %table{:style => 'border-spacing:10px;'}
+    %tr
+      %th{:style => 'text-align:right;'} URL
+      %td= f.text_field :url
+    %tr
+      %th{:style => 'vertical-align:top; text-align:right;'} Description
+      %td= f.text_area :description, :cols => 100
+      
   %br
     
   .actions

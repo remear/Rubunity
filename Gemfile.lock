@@ -136,9 +136,9 @@ GEM
       json_pure
       rubyzip
     term-ansicolor (1.0.5)
-    thinking-sphinx (2.0.2)
+    thinking-sphinx (2.0.1)
       activerecord (>= 3.0.3)
-      riddle (>= 1.2.2)
+      riddle (>= 1.2.1)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -167,6 +167,6 @@ DEPENDENCIES
   rails (= 3.0.3)
   rails3-generators
   rspec-rails
-  thinking-sphinx (~> 2.0.0)
+  thinking-sphinx (= 2.0.1)
   version_sorter
   will_paginate!
