@@ -1,6 +1,9 @@
-- title 'Login'
+- title 'Sign In'
 
-%h1 Login
+%h1 Sign In
+
+= content_for :breadcrumbs do
+  %li Sign In
 
 = form_for(@user_session) do |f|
   = f.error_messages
