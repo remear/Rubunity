@@ -1,7 +1,11 @@
-- content_for(:breadcrumbs) do
+- title "Settings"
+
+= content_for :breadcrumbs do
   %li Settings
+  
 %h1.settings Settings
 %br/
+
 - form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
 

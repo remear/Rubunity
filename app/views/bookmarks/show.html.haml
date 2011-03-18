@@ -1,6 +1,9 @@
+- title @bookmark.title
+
 = content_for :breadcrumbs do
   %li= link_to 'Bookmarks', bookmarks_path
   %li= @bookmark.title
+  
 = content_for :actions do
   - if @bookmark.user == current_user
     %li= link_to 'Edit', edit_bookmark_path(@bookmark), :class => 'editleft'

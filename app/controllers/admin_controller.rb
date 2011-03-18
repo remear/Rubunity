@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  layout 'standard'
+  #layout 'standard'
 
   before_filter :require_user
   before_filter :require_admin

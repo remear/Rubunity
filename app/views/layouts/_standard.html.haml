@@ -4,13 +4,8 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "en-us", "http-equiv" => "Content-Language"}/
     %title#page_title Rubunity - Bookmarks
-    = stylesheet_link_tag 'base'
-    = stylesheet_link_tag 'standard'
-    = stylesheet_link_tag 'sessioninfo'
-    = stylesheet_link_tag 'coderay'
-    = stylesheet_link_tag 'facebox'
-    = javascript_include_tag 'jquery', 'application'
-    = javascript_include_tag 'facebox'
+    = stylesheet_link_tag 'base', 'standard', 'sessioninfo', 'coderay', 'facebox'
+    = javascript_include_tag 'jquery', 'application', 'facebox'
   %body
     #container.subpage
       #header

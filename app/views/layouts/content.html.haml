@@ -2,25 +2,17 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title Rubunity
+    %title
+      Rubunity
+      = "- " + yield(:title) unless !:title
     %meta{:content => "", :name => "description"}
       %meta{:content => "", :name => "keywords"}
-        = stylesheet_link_tag 'base.css'
-        = stylesheet_link_tag 'nav.css'
-        = stylesheet_link_tag 'simple.css'
+        = stylesheet_link_tag 'base', 'nav', 'simple'
+        = javascript_include_tag 'jquery', 'rails', 'application', 'facebox'
         
   %body
     #container
-      #globalheader
-        #logo{:onclick => "window.location=\"/\""} &nbsp;
-        #g-nav-util
-          %span.quote{:style=>'float:left'} Rubunity - Per general consensus, pants are required
-          = render :partial => 'layouts/sessioninfo'
-          = render :partial => 'layouts/utilnav'
-        #g-nav
-          = render :partial => 'layouts/gnav'
-        .clearer
-        %br/
+      = render 'layouts/header'
       .clearer
       #toolbar
         %ul#breadcrumbs

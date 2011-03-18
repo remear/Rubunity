@@ -1,3 +1,11 @@
+- title "Settings"
+
+= content_for :breadcrumbs do
+  %li Settings
+  
+%h1.settings Settings
+%br/
+
 = form_for(@user) do |f|
   = f.error_messages
   %p
@@ -35,4 +43,4 @@
     = f.password_field :password_confirmation, :id => "password_confirmation"
   
   %p
-    = f.submit 'Submit'
+    = image_submit_tag 'update.png', :class => 'button_img'

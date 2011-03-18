@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
-  layout 'standard'
+  #layout 'standard'
   
   load_and_authorize_resource
   

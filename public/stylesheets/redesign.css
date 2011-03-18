@@ -1,7 +1,5 @@
 fieldset { border:0px; }
 
-.clearer { clear:both; display:block; margin:0; padding:0; height:0; line-height:1px; font-size:1px; }
-.sosumi { font-size:10px !important; color:#76797c; }
 #header, #container { background:#EAEAEA; margin:0px; color:#333;  }
 #container { padding-top:100px; min-height:250px; }
 #content code {margin:0pt; padding:1px 3px; background:rgb(255, 255, 225) none repeat scroll 0% 0%; font-family:Monaco,monospace; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; line-height:normal; font-size-adjust:none; font-stretch:normal; -x-system-font:none;}
@@ -286,7 +284,7 @@ body, html
 }
 
 a { 
-    color:#3586b4; 
+    color:#0088CC; 
     text-decoration:none;
 }
 a:hover {
@@ -492,9 +490,6 @@ h3,
 	color:#203C57;
 }
 
-a { color:#1768AE; }
-a:hover { color:#3A3D43; }
-
 #content { color:#000000; }
 #content .right h2 { color:#191B1C; }
 #content .right a { color:#1768AE; }
@@ -522,28 +517,39 @@ a:hover { color:#3A3D43; }
 }
 #footer_bottom { background-color:#02243D; }
 
-#logo {
-  width: 135px;
+
+.header_holder {
   margin: 0 auto;
-  padding-bottom: 115px;
+  padding-top: 30px;
+  width: 980px;
 }
 
-#logo img {
-  width: 130px;
-  margin: 0 auto;
+#g-nav-util .quote {
+  color: #7E8082;
+  font-size: 11px;
+  margin-left: -5px;
 }
 
-.sign_up {
-  text-align: center;
-  font-size: 16px;
-  padding-bottom: 50px;
+#topnav {
+  font-size: 11px;
+  line-height: 15px;
+  text-align: right;
 }
 
-.sign_up a {
-  text-transform: uppercase;
-  font-size: 13px;
+#small_signup {
+  display: inline;
+  float: none;
+  line-height: 23px;
+  margin: 25px 0 0;
+  width: 170px;
 }
 
-.sign_up a:hover {
+#topnav a.signin {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background: none repeat scroll 0 0 #88BBD4;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 4px 6px 6px;
   text-decoration: none;
 }
