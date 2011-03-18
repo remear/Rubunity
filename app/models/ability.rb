@@ -9,6 +9,7 @@ class Ability
     else
       can :read, :all
       can :create, Comment
+      can :vote, Bookmark
     
       if user.role?(:moderator)
         can [:create, :update, :destory], [Bookmark, Comment]

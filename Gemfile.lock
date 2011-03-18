@@ -46,7 +46,7 @@ GEM
     annotate-models (1.0.4)
     arel (2.0.9)
     builder (2.1.2)
-    cancan (1.6.1)
+    cancan (1.6.2)
     capybara (0.4.1.2)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -88,6 +88,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    make_voteable (0.0.2)
+      activerecord (>= 3.0.0)
     mime-types (1.16)
     mysql2 (0.2.6)
     nifty-generators (0.4.5)
@@ -158,6 +160,7 @@ DEPENDENCIES
   factory_girl
   haml
   jquery-rails
+  make_voteable
   mysql2
   nifty-generators
   rails (= 3.0.3)
