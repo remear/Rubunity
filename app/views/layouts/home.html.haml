@@ -1,0 +1,16 @@
+!!!
+%html
+
+  %head  
+    %title
+      Rubunity
+      = "- " + yield(:title) unless !:title
+    = stylesheet_link_tag 'application', 'flash'
+    = javascript_include_tag 'jquery', 'rails', 'application', 'facebox'
+    
+  %body
+    = yield
+        
+    = render 'layouts/footer_top'
+        
+    = render 'layouts/footer_bottom'
