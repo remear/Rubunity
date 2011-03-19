@@ -1,5 +1,6 @@
 module ApplicationHelper
   include TweetButton
+  include FacebookShare
   
   def flash_messages
     output = ''

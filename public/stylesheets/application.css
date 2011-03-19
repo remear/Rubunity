@@ -512,6 +512,10 @@ ol,ul {
   line-height: 0;
 }
 
+.fb_share img{
+  height: 20px;
+}
+
 .float_left {
   float: left;
 }

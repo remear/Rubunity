@@ -6,3 +6,4 @@ tmp/**/*
 config/database.yml
 config/*.sphinx.conf
 db/sphinx
+config/app_config.yml
