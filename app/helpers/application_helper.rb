@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include TweetButton
+  
   def flash_messages
     output = ''
     [:notice, :warning, :success, :error].map { |f|
@@ -13,4 +15,6 @@ module ApplicationHelper
     }
     return output.html_safe
   end
+  
+  TweetButton.default_tweet_button_options = {:via => "Rubunity", :count => "horizontal"}
 end

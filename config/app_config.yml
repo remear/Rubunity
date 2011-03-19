@@ -1,0 +1,11 @@
+base: &base
+  fb_app_id: PUT_ID_HERE
+
+development:
+  <<: *base
+
+test:
+  <<: *base
+
+production:
+  <<: *base
