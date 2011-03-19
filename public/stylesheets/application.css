@@ -35,6 +35,10 @@ h1 {
   padding-bottom: 10px;
 }
 
+h2.section span {
+  font-size: 12px;
+}
+
 h3 {
   color: #191B1C;
   font-size: 18px;
@@ -410,6 +414,24 @@ ol,ul {
   color: green;
 }
 
+#sessioninfo table {
+  float: right;
+}
+
+#sessioninfo td.user_name {
+  vertical-align: top;
+}
+
+#sessioninfo span.user_name_span {
+  padding-right: 20px; 
+  font-weight: bold;
+}
+
+#sessioninfo span.pledgie {
+  padding-left: 15px; 
+  font-weight: bold;
+}
+
 #small_signup {
 	display: inline;
 	line-height: 23px;
@@ -459,6 +481,12 @@ ol,ul {
 	*background-position: 0 3px!important;
 }
 
+#vote {
+  font-size: 16px;
+  margin-top: -35px;
+  padding-right: 10px;
+}
+
 .button_img {
   margin-top: 20px;
 }
@@ -482,6 +510,22 @@ ol,ul {
   font-size: 1px;
   height: 0;
   line-height: 0;
+}
+
+.float_left {
+  float: left;
+}
+
+.float_right {
+  float: right;
+}
+
+.profile-img {
+  margin-right: 10px;
+}
+
+.section {
+  margin: 50px 0 20px 0;
 }
 
 .signin {
@@ -519,4 +563,10 @@ ol,ul {
   margin: 20px auto 0;
   text-align: center;
   width: 500px;
+}
+
+.up_vote {
+  width: 30px;
+  vertical-align: middle;
+  cursor: pointer;
 }

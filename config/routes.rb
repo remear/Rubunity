@@ -7,8 +7,12 @@ Rubunity::Application.routes.draw do
     match "add_topic", :as => "add_topic"
     match "add_rails_version", :as => "add_rails_version"
     match "add_ruby_version", :as => "add_ruby_version"
+    
     resources :comments
   end
+  
+  # votes
+  match "bookmark/vote/:bookmark", :to => "bookmarks#vote"
 
   resources :users, :user_sessions
 
@@ -19,7 +23,6 @@ Rubunity::Application.routes.draw do
   match "settings" => "users#settings", :as => "settings"
   
   match "search" => "search#query", :as => "search"
-  
   
   #pages
   match "botusage" => "pages#irc_bot_usage", :as => "bot_usage"
