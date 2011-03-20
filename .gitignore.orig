@@ -5,5 +5,9 @@ tmp/**/*
 .DS_Store
 config/database.yml
 config/*.sphinx.conf
+<<<<<<< HEAD
+db/sphinx/*
+=======
 db/sphinx
 config/app_config.yml
+>>>>>>> tgraham-master

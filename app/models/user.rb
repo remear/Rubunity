@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  make_voter
+  
   has_many :comments
 
   acts_as_authentic

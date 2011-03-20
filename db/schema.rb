@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217013628) do
+ActiveRecord::Schema.define(:version => 20110318175754) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20110217013628) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "up_votes",    :default => 0, :null => false
+    t.integer  "down_votes",  :default => 0, :null => false
   end
 
   add_index "bookmarks", ["url"], :name => "index_bookmarks_on_url", :unique => true
@@ -77,6 +79,22 @@ ActiveRecord::Schema.define(:version => 20110217013628) do
     t.boolean  "admin",             :default => false
     t.integer  "roles_mask"
     t.string   "role"
+    t.integer  "up_votes",          :default => 0,     :null => false
+    t.integer  "down_votes",        :default => 0,     :null => false
   end
+
+  create_table "votings", :force => true do |t|
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "up_vote",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
+  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
+  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end
