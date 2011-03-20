@@ -8,8 +8,8 @@
   - else
     %table{:style => "float:right"}
       %tr
-        %td{:rowspan => "2"}= image_tag current_user.profile_image, :style => "margin-right:10px;"
         %td{:style => "vertical-align:top"}
+          Logged in as :
           %span{:style => "padding-right:20px;"}
             = current_user.first_name
             = current_user.last_name
