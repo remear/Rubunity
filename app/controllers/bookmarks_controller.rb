@@ -128,4 +128,14 @@ class BookmarksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def vote
+    b = Bookmark.find_by_id(params[:bookmark])
+    if !current_user || b.user_id == current_user.id || current_user.voted?(b)
+      redirect_to :back, :alert => "Sorry, no can do." and return
+    else
+      current_user.up_vote(b)
+      redirect_to :back, :notice => "Thank's for your vote!"
+    end
+  end
 end

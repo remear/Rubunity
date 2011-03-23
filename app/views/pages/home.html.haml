@@ -1,0 +1,31 @@
+- title "Welcome"
+
+#header
+  .header_holder
+    .logo
+    = render :partial => 'layouts/sessioninfo'
+    #nav
+      = render :partial => 'layouts/gnav'
+    .divider
+
+#home_container
+  #home_logo{:style => 'width:1000px; height:266px; background:url(/images/bg_home.jpg) no-repeat center; margin-bottom:-150px;'}
+  %form{:action => "", :method => "get"}
+    .textInput
+      %input{:name => "q", :placeholder => "Enter a search term...", :type => "search", :results => '10', :value => ""}/
+  .clearer
+  %p.subtext{:style => 'color:#5987aa'} searches bookmarks, guides, comments, ruby & rails versions
+  - if ! current_user
+    #login-form-home
+      %h3 Sign in
+      = form_for @user_session, :as => :user_session, :url => { :controller => 'user_sessions', :action => 'create' } do |f|
+        #login-field= f.email_field :email, :placeholder => 'name@example.com'
+        #password-field= f.password_field :password, :placeholder => 'password'
+        = f.submit 'Sign in', :class=>'signin'
+        
+  %p.sign_up
+    - if ! current_user
+      or
+      = link_to "Register", '/register'
+      to join the community
+      %br

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+  
   def settings
     if !current_user
       redirect_to root_url
@@ -31,8 +32,7 @@ class UsersController < ApplicationController
   def create    
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = 'Welcome!'
-      redirect_to root_url
+      redirect_to root_url, :notice => 'Welcome!'
     else
       render :action => "new"
     end
@@ -42,8 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'Profile updated!'
-      redirect_to root_url
+      redirect_to root_url, :notice => 'Profile updated!'
     else
       render :action => "edit"
     end

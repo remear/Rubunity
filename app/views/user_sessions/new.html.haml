@@ -1,21 +1,23 @@
-%h1==Login
-- @title = "Login"
+- title 'Sign In'
+
+%h1 Sign In
+
+= content_for :breadcrumbs do
+  %li Sign In
 
 = form_for(@user_session) do |f|
   = f.error_messages
+  %table.form
+    %tr
+      %th= f.label :email
+      %td= f.email_field :email, :id => "email"
+    %tr
+      %th= f.label :password
+      %td= f.password_field :password, :id => "password"
+    %tr
+      %th= f.label :remember_me, "Remember me?"
+      %td= f.check_box :remember_me, {}, "true", "false"
+  %br
+        
   %p
-    = f.label :email
-    %br
-    = f.text_field :email, :id => "email"
-  
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password, :id => "password"
-    
-  %p
-    = f.label :remember_me, "Remember me?"
-    = f.check_box :remember_me, {}, "true", "false"
-  
-  %p
-    = f.submit 'Login'
+    = image_submit_tag 'signin.png', :class => 'button_img'

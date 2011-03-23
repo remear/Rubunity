@@ -1,46 +1,55 @@
 = form_for(@user) do |f|
   = f.error_messages
-  %p
-    You Current Rubunian Level:
-    %br/
-    = @user.roles
-  %p
-    = f.label :nickname
-    %br
-    = f.text_field :nickname, :id => "nickname"
-    
-  %p
-    = f.label :first_name
-    %br
-    = f.text_field :first_name, :id => "first_name"
-    
-  %p
-    = f.label :last_name
-    %br
-    = f.text_field :last_name, :id => "last_name"
-  
-  %p
-    = f.label :email
-    %br
-    = f.text_field :email, :id => "email"
-  
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password, :id => "password"
-  
-  %p
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation, :id => "password_confirmation"
-  
-  %p
-    = f.label :roles
-    - for role in User::ROLES
-      = check_box_tag "user[roles][]", role, @user.roles.include?(role)
-      = h role.humanize
-    = hidden_field_tag "user[roles][]"
+  %table.form
+    - if current_user
+      %tr
+        %th Your Current Rubunian Level:
+        %td= @user.roles
+    %tr
+      %th= f.label :nickname
+      %td= f.text_field :nickname, :id => "nickname"
+    %tr
+      %th= f.label :first_name
+      %td= f.text_field :first_name, :id => "first_name"
+    %tr
+      %th= f.label :last_name
+      %td= f.text_field :last_name, :id => "last_name"
+    %tr
+      %th= f.label :email
+      %td= f.email_field :email, :id => "email"
+    %tr
+      %th= f.label :password
+      %td= f.password_field :password, :id => "password"
+    %tr
+      %th= f.label :password_confirmation
+      %td= f.password_field :password_confirmation, :id => "password_confirmation"
+    %tr
+      %th
+      %td
+    %tr
+      %th
+      %td
+    %tr
+      %th
+      %td
+    %tr
+      %th
+      %td
+    %tr
+      %th
+      %td
+
+  - if admin?
+    %p
+      = f.label :roles
+      - for role in User::ROLES
+        = check_box_tag "user[roles][]", role, @user.roles.include?(role)
+        = h role.humanize
+      = hidden_field_tag "user[roles][]"
       
   
   %p
-    = f.submit 'Submit'
+    - if controller.action_name = 'new'
+      = image_submit_tag 'signup.png', :class => 'button_img'
+    - else
+      = image_submit_tag 'submit.png', :class => 'button_img'

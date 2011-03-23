@@ -1,38 +1,38 @@
+- title "Settings"
+
+= content_for :breadcrumbs do
+  %li Settings
+  
+%h1.settings Settings
+%br/
+
 = form_for(@user) do |f|
   = f.error_messages
+  %table.form
+    %tr
+      %th Groups
+      %td
+        %ul.inline
+          - @user.roles.each do |role|
+            %li= role
+    %tr
+      %th= f.label :nickname
+      %td= f.text_field :nickname, :id => "nickname"
+    %tr
+      %th= f.label :first_name
+      %td= f.text_field :first_name, :id => "first_name"
+    %tr
+      %th= f.label :last_name
+      %td= f.text_field :last_name, :id => "last_name"
+    %tr
+      %th= f.label :email
+      %td= f.text_field :email, :id => "email"
+    %tr
+      %th= f.label :password
+      %td= f.password_field :password, :id => "password"
+    %tr
+      %th= f.label :password_confirmation
+      %td= f.password_field :password_confirmation, :id => "password_confirmation"
+
   %p
-    You Current Rubunian Level:
-    %br/
-    = @user.roles
-  %p
-    = f.label :nickname
-    %br
-    = f.text_field :nickname, :id => "nickname"
-    
-  %p
-    = f.label :first_name
-    %br
-    = f.text_field :first_name, :id => "first_name"
-    
-  %p
-    = f.label :last_name
-    %br
-    = f.text_field :last_name, :id => "last_name"
-  
-  %p
-    = f.label :email
-    %br
-    = f.text_field :email, :id => "email"
-  
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password, :id => "password"
-  
-  %p
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation, :id => "password_confirmation"
-  
-  %p
-    = f.submit 'Submit'
+    = image_submit_tag 'update.png', :class => 'button_img'

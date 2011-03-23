@@ -1,4 +1,6 @@
 class Bookmark < ActiveRecord::Base
+  make_voteable
+  
   belongs_to :user
   has_many :comments, :as => :commentable
   after_create :generate_permalink

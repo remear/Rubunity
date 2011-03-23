@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  layout :choose_layout
+  layout 'standard'
 
   def new
     @user_session = UserSession.new
@@ -9,11 +9,9 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Hello!"
       redirect_to root_url, :notice => "Hello!"
     else
-      flash[:notice] = "Invlaid Credentials"
-      render :action => 'new'
+      redirect_to new_user_session_path, :notice => "Invlaid Credentials"
     end
   end
   
@@ -25,10 +23,4 @@ class UserSessionsController < ApplicationController
     redirect_to root_url
   end
 
-  def choose_layout
-    case action_name
-      when 'home' then 'home'
-      else 'content'
-    end
-  end
 end
