@@ -10,7 +10,7 @@
 
 #home_container
   #home_logo{:style => 'width:1000px; height:266px; background:url(/images/bg_home.jpg) no-repeat center; margin-bottom:-150px;'}
-  %form{:action => "", :method => "get"}
+  %form{:action => "/search", :method => "get"}
     .textInput
       %input{:name => "q", :placeholder => "Enter a search term...", :type => "search", :results => '10', :value => ""}/
   .clearer
