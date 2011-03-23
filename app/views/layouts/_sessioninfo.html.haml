@@ -1,10 +1,17 @@
 #sessioninfo
   - if ! current_user
-    #small_signup{:style => "float:right; margin-top:0px"}
-      %span New to rubunity?
-      = link_to 'Sign up now', register_url, :class => "signup-button"
-      Have an account? #{link_to 'Sign in', login_path, :class => "signin"}
-    .clearer
+    %span New to rubunity?
+    = link_to 'Sign up now', register_url, :class => "signup-button"
+    Have an account? #{link_to 'Sign in', login_path, :class => "signin"}
+    
+    #flyout{:style => 'display:none'}
+      %form
+        Email: 
+        %input{:type => 'email'}
+        %br
+          
+        Password: 
+        %input{:type => 'password'}
   - else
     %table{:style => "float:right"}
       %tr
