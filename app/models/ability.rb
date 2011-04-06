@@ -22,8 +22,10 @@ class Ability
       end
     
       if user.role?(:contributor)
-        can :create, @bookmark
-        can :update, @bookmark, :user_id => user.id
+        can :create, Bookmark
+        can :update, Bookmark do |bookmark|
+          bookmark.try(:user) == user
+        end
         can :create, @comment
         can :update, @comment, :user_id => user.id
       end
