@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20110318175754) do
     t.datetime "updated_at"
     t.string   "nickname"
     t.boolean  "admin",             :default => false
-    t.integer  "roles_mask"
+    t.integer  "roles_mask",        :default => 4
     t.string   "role"
     t.integer  "up_votes",          :default => 0,     :null => false
     t.integer  "down_votes",        :default => 0,     :null => false
