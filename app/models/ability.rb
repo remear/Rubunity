@@ -8,16 +8,24 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :create, Comment
+      #can :create, Comment
       can :vote, Bookmark
     
       if user.role?(:moderator)
-        can [:create, :update, :destory], [Bookmark, Comment]
+        #can :manage, :all
+        can :create, @bookmark
+        can :update, @bookmark
+        can :destroy, @bookmark
+        can :create, @comment
+        can :update, @comment
+        can :destroy, @comment
       end
     
       if user.role?(:contributor)
-        can :create, Bookmark
-        can :update, [Bookmark, Comment], :user_id => user.id
+        can :create, @bookmark
+        can :update, @bookmark, :user_id => user.id
+        can :create, @comment
+        can :update, @comment, :user_id => user.id
       end
     end
   end

@@ -5,7 +5,7 @@
   %li= @bookmark.title
   
 = content_for :actions do
-  - if @bookmark.user == current_user
+  - if can? :edit, @bookmark
     %li= link_to 'Edit', edit_bookmark_path(@bookmark), :class => 'editleft'
     %li= link_to 'Back', bookmarks_path, :class => 'backleft'
 
