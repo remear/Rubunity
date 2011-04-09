@@ -4,7 +4,7 @@ Rubunity::Application.routes.draw do
   resources :comments
 
   resources :bookmarks do
-    match "add_topic", :as => "add_topic"
+    match "add_topic" => "bookmarks#add_topic", :as => "add_topic"
     match "add_rails_version", :as => "add_rails_version"
     match "add_ruby_version", :as => "add_ruby_version"
     
