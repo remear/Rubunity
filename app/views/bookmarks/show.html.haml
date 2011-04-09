@@ -52,7 +52,7 @@
 %h2.section
   Topics
   %span{:style => 'float:right; font-size:12px;'}
-    %a{:href => "#topic-form", :rel => "fancybox", :class => "addleft", :id => "addTopic"} Add Topic
+    %a{:href => "#topic-form", :rel => "fancybox", :class => "addleft"} Add Topic
     
 #topics
   - if ! @bookmark.topic_list.blank?
@@ -62,12 +62,13 @@
     %p.sosumi No topics tagged
 .clearer
 
-#topic-form
-  %h2 Add Topic
-  = form_tag bookmark_add_topic_path(@bookmark), :remote => true do
-    = text_field_tag :topic_list
-    = submit_tag
-  %p.sosumi Separate multiple topics with commas (ex: A, B, C)
+%div{:style => 'display: none;'}
+  #topic-form
+    %h2 Add Topic
+    = form_tag bookmark_add_topic_path(@bookmark), :remote => true do
+      = text_field_tag :topic
+      = submit_tag
+    %p.sosumi Separate multiple topics with commas (ex: A, B, C)
 
 %h2.section
   Rails Versions
@@ -95,8 +96,6 @@
   Ruby Versions
   %span{:style => 'float:right; font-size:12px;'}
     %a{:href => "#ruby-version-form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
-  %span.float_right
-    %a{:href => "#ruby-version-form", :rel => "facebox", :class => "addleft"} Add Ruby Version
     
 #ruby-versions
   - if ! @bookmark.ruby_version_list.blank?
