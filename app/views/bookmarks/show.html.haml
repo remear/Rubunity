@@ -65,7 +65,7 @@
 %div{:style => 'display: none;'}
   #topic-form
     %h2 Add Topic
-    = form_tag bookmark_add_topic_path(@bookmark), :remote => true do
+    = form_tag (bookmark_add_topic_path(@bookmark)), :remote => true do
       = text_field_tag :topic
       = submit_tag
     %p.sosumi Separate multiple topics with commas (ex: A, B, C)
@@ -75,7 +75,6 @@
   %span{:style => 'float:right; font-size:12px;'}
     %a{:href => "#rails-version-list", :rel => "fancybox", :class => "addleft"} Add Rails Version
   
-#rails-version-form{:style => 'display:none'}
 #rails-versions
   - if ! @bookmark.rails_version_list.blank?
     - @bookmark.rails_version_list.each do |rails_version|
@@ -84,18 +83,19 @@
     %p.sosumi No rails versions tagged
 .clearer
 
-#rails-version-form
-  %h2 Add Rails Version
-  = form_tag bookmark_add_rails_version_path(@bookmark), :remote => true do
-    = text_field_tag :rails_version
-    = submit_tag
-  %p.sosumi Separate multiple versions with commas (ex: 2.3.5, 2.3.8, 3.0.1)
+%div{:style => 'display: none;'}
+  #rails_version_form
+    %h2 Add Rails Version
+    = form_tag bookmark_add_rails_version_path(@bookmark), :remote => true do
+      = text_field_tag :rails_versions      
+      = submit_tag
+    %p.sosumi Separate multiple versions with commas (ex: 2.3.5, 2.3.8, 3.0.1)
   
 %h2.section{:style => 'margin:50px 0 20px 0;'}
 %h2.section
   Ruby Versions
   %span{:style => 'float:right; font-size:12px;'}
-    %a{:href => "#ruby-version-form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
+    %a{:href => "#ruby_version_form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
     
 #ruby-versions
   - if ! @bookmark.ruby_version_list.blank?
@@ -105,17 +105,17 @@
     %p.sosumi No ruby versions tagged
 .clearer
 
-#ruby-version-form{:style => 'display:none;'}
-#ruby-version-form
-  %h2 Add Ruby Version
-  = form_tag bookmark_add_ruby_version_path(@bookmark), :remote => true do
-    = text_field_tag :ruby_version
-    = submit_tag
-  %p.sosumi Separate multiple versions with commas (ex: 1.8.6, 1.8.7, 1.9.2-p0, 1.9.2)
+%div{:style => 'display:none;'}
+  #ruby_version_form
+    %h2 Add Ruby Version
+    = form_tag bookmark_add_ruby_version_path(@bookmark), :remote => true do
+      = text_field_tag :ruby_version
+      = submit_tag
+    %p.sosumi Separate multiple versions with commas (ex: 1.8.6, 1.8.7, 1.9.2-p0, 1.9.2)
 
 
 %div{:style => 'display:none'}
-  #rails-version-list{:style => 'width:800px; height:400px; padding:10px 30px 20px 20px;'}
+  #rails-version-list{:style => 'width:800px; height:500px; padding:10px 30px 20px 20px;'}
     = rails_versions_list
   
 %h2.section Comments

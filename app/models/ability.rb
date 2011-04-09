@@ -12,17 +12,13 @@ class Ability
       can :vote, Bookmark
     
       if user.role?(:moderator)
-        #can :manage, :all
-        can :create, @bookmark
-        can :update, @bookmark
-        can :destroy, @bookmark
-        can :create, @comment
-        can :update, @comment
-        can :destroy, @comment
+        can :manage, Bookmark
+        can :manage, Comment
       end
     
       if user.role?(:contributor)
         can :create, Bookmark
+        can :add_topic, Bookmark
         can :update, Bookmark do |bookmark|
           bookmark.try(:user) == user
         end

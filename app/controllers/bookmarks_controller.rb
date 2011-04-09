@@ -69,7 +69,6 @@ class BookmarksController < ApplicationController
       if @bookmark.update_attributes(params[:bookmark])
         format.html { redirect_to(@bookmark, :notice => 'Bookmark was successfully updated.') }
         format.xml  { head :ok }
-        #format.js   { render :nothing => true }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @bookmark.errors, :status => :unprocessable_entity }
@@ -79,7 +78,7 @@ class BookmarksController < ApplicationController
 
   def add_topic
     @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
-
+    
     params[:topic].to_s.split(%r{,\s*}).each do |topic|
       @bookmark.topic_list.add(topic)
     end
@@ -87,6 +86,8 @@ class BookmarksController < ApplicationController
     respond_to do |format|
       if @bookmark.save
         format.js
+      else
+        flash[:notice] = "You can not add topics."
       end
     end
   end
