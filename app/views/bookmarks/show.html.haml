@@ -25,42 +25,9 @@
     By 
     = "<strong>#{@bookmark.user.full_name}</strong>".html_safe
 .clearer
-#visit-url{:style => 'float:right'}
-  - if @url_status == true
-    = link_to @bookmark.url do
-      = image_tag '/images/buttons/btn_go_to_site.png'
-  - else
-    = link_to @bookmark.url do
-      = image_tag '/images/buttons/btn_go_to_site_red.png'
 
 %h3= @bookmark.url
 
-#rails-versions
-  %h3.section{:style => 'margin:50px 0 20px 0;'}
-    Rails Versions
-    %span{:style => 'float:right; font-size:12px;'}
-      %a{:href => "#rails-version-list", :rel => "fancybox", :class => "addleft"} Add Rails Version
-    .clearer
-    %ul
-      - if ! @bookmark.rails_version_list.blank?
-        - @bookmark.rails_version_list.each do |rails_version|
-          %li= rails_version
-      - else
-        %li.sosumi No rails versions tagged
-  
-   
-#ruby-versions
-  %h3.section{:style => 'margin:50px 0 20px 0;'}
-    Ruby Versions
-    %span{:style => 'float:right; font-size:12px;'}
-      %a{:href => "#rails-version-form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
-    .clearer
-    %ul
-      - if ! @bookmark.rails_version_list.blank?
-        - @bookmark.rails_version_list.each do |rails_version|
-          %li= rails_version
-      - else
-        %li.sosumi No rails versions tagged
 #vote.float_right
   = pluralize(@bookmark.votes, 'Vote')
   - unless !current_user || @bookmark.user_id == current_user.id || current_user.voted?(@bookmark)
@@ -85,8 +52,7 @@
 %h2.section
   Topics
   %span{:style => 'float:right; font-size:12px;'}
-  %span.float_right
-    %a#addTopic{:href => "#topic-form", :class => "addleft"} Add Topic
+    %a{:href => "#topic-form", :rel => "fancybox", :class => "addleft", :id => "addTopic"} Add Topic
     
 #topics
   - if ! @bookmark.topic_list.blank?
@@ -99,14 +65,14 @@
 #topic-form
   %h2 Add Topic
   = form_tag bookmark_add_topic_path(@bookmark), :remote => true do
-    = text_field_tag :topic
+    = text_field_tag :topic_list
     = submit_tag
   %p.sosumi Separate multiple topics with commas (ex: A, B, C)
 
 %h2.section
   Rails Versions
-  %span.float_right
-    %a{:href => "#rails-version-list", :rel => "facebox", :class => "addleft"} Add Rails Version
+  %span{:style => 'float:right; font-size:12px;'}
+    %a{:href => "#rails-version-list", :rel => "fancybox", :class => "addleft"} Add Rails Version
   
 #rails-version-form{:style => 'display:none'}
 #rails-versions

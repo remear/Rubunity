@@ -69,7 +69,7 @@ class BookmarksController < ApplicationController
       if @bookmark.update_attributes(params[:bookmark])
         format.html { redirect_to(@bookmark, :notice => 'Bookmark was successfully updated.') }
         format.xml  { head :ok }
-        format.js   { render :nothing => true }
+        #format.js   { render :nothing => true }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @bookmark.errors, :status => :unprocessable_entity }
