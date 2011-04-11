@@ -9,6 +9,12 @@ $(function() {
   });
   
   //$('#ruby-version-form').hide();
+  
+  $("#rails-version-list").live('ajax:succes', function(){
+    alert('Success');
+    return true;
+  });
+  
 
   $('.up_vote').click(function() {
     //alert($(this).attr('value'));
@@ -16,3 +22,4 @@ $(function() {
   });
   
 });
+

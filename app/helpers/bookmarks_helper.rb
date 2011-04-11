@@ -36,7 +36,6 @@ module BookmarksHelper
     end
 
     list += "</ul>\n\n"
-    list += "#{ submit_tag }"
     list.html_safe
   end
 end
