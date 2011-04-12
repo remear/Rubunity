@@ -79,7 +79,7 @@ class BookmarksController < ApplicationController
   def add_topic
     @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
     
-    params[:topic].to_s.split(%r{,\s*}).each do |topic|
+    params[:topic].to_s.split(",").each do |topic|
       @bookmark.topic_list.add(topic)
     end
         
@@ -88,20 +88,6 @@ class BookmarksController < ApplicationController
         format.js
       else
         flash[:notice] = "You can not add topics."
-      end
-    end
-  end
-  
-  def add_ruby_version
-    @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
-
-    params[:ruby_version].to_s.split(%r{,\s*}).each do |ruby_version|
-      @bookmark.ruby_version_list.add(ruby_version)
-    end
-        
-    respond_to do |format|
-      if @bookmark.save
-        format.js
       end
     end
   end
@@ -119,6 +105,21 @@ class BookmarksController < ApplicationController
       end
     end
   end
+  
+  def add_ruby_version
+    @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
+
+    params[:ruby_version].to_s.split(%r{,\s*}).each do |ruby_version|
+      @bookmark.ruby_version_list.add(ruby_version)
+    end
+        
+    respond_to do |format|
+      if @bookmark.save
+        format.js
+      end
+    end
+  end
+
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.xml
   def destroy

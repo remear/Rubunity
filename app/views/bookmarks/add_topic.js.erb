@@ -1,2 +1,4 @@
 $("input#topic").val("");
-$("#topics").append("<span><%= params[:topic] %></span>");
+<% params[:topic].to_s.split(",").each do |topic| %>
+  $("#topics").append("<span><%= topic %></span>");
+<% end %>

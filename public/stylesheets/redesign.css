@@ -639,3 +639,7 @@ a:hover { color:#3A3D43; }
 	border-top-right-radius: 0;
 	z-index:9999;
 }
+
+.version_check_box input[type=checkbox] {
+  display: inline;
+}

@@ -13,12 +13,17 @@ class Ability
     
       if user.role?(:moderator)
         can :manage, Bookmark
+        can :add_topic, Bookmark
+        can :add_rails_version, Bookmark
+        can :add_ruby_version, Bookmark
         can :manage, Comment
       end
     
       if user.role?(:contributor)
         can :create, Bookmark
         can :add_topic, Bookmark
+        can :add_rails_version, Bookmark
+        can :add_ruby_version, Bookmark
         can :update, Bookmark do |bookmark|
           bookmark.try(:user) == user
         end
