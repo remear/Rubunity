@@ -32,7 +32,7 @@ module BookmarksHelper
         list += "<h2>Rails #{ version.to_i > 0 ? version : ""}</h2>\n\n"
         list += "<ul>\n" 
       end
-      list += "<li class='version_check_box'>" + check_box_tag("bookmark[rails_versions]", rails) + label_tag(rails) + "</li>\n"
+      list += "<li class='version_check_box'>" + check_box_tag("rails_versions[]", rails) + label_tag(rails) + "</li>\n"
     end
 
     list += "</ul>\n\n"
