@@ -95,7 +95,7 @@ class BookmarksController < ApplicationController
   def add_rails_version
     @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
 
-    params[:rails_version].to_s.split(%r{,\s*}).each do |rails_version|
+    params[:rails_versions].each do |rails_version|
       @bookmark.rails_version_list.add(rails_version)
     end
         
