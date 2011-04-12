@@ -84,20 +84,19 @@
 .clearer
 
 %div{:style => 'display: none;'}
-  #rails-version-list{:style => 'width:800px; height:500px; padding:10px 30px 20px 20px;'}
+  #rails-version-list{:style => 'width:820px; height:550px; padding:10px 30px 20px 20px;'}
     %h2 Add Rails Version
     = form_tag bookmark_add_rails_version_path(@bookmark), :remote => true do
       - active_version = rails_versions.last[0]
       %h2= "Rails #{active_version}"
       %ul
-      - rails_versions.reverse.each do |version|
-        - if version[0] != active_version
-          - active_version = version[0]
-          %h2= active_version.to_i > 0 ? "Rails #{active_version}" : "Rails"
-          %ul
-        
-        %li.version_check_box
-          = check_box_tag("rails_versions[]", version) + label_tag(version)
+        - rails_versions.reverse.each do |version|
+          - if version[0] != active_version
+            - active_version = version[0]
+            %h2= active_version.to_i > 0 ? "Rails #{active_version}" : "Rails"
+            %ul
+          %li.version_check_box
+            = check_box_tag("rails_versions[]", version) + label_tag(version)
       = submit_tag
   
 %h2.section{:style => 'margin:50px 0 20px 0;'}
