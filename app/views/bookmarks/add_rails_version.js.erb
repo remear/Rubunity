@@ -1,3 +1,5 @@
 <% params[:rails_versions].each do |tags| %>
   $("#rails-versions").append("<span><%= tags %></span>");
 <% end %>
+
+$("a#fancybox-close").click();

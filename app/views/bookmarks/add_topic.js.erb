@@ -1,4 +1,7 @@
 $("input#topic").val("");
+
 <% params[:topic].to_s.split(",").each do |topic| %>
   $("#topics").append("<span><%= topic %></span>");
 <% end %>
+
+$("a#fancybox-close").click();

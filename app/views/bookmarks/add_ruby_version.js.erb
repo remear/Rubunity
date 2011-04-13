@@ -1,2 +1,7 @@
 $("input#ruby_version").val("");
-$("#ruby-versions").append("<span><%= params[:ruby_version] %></span>");
+
+<% params[:ruby_version].to_s.split(",").each do |rubies| %>
+  $("#ruby-versions").append("<span><%= rubies %></span>");
+<% end %>
+
+$("a#fancybox-close").click();
