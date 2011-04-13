@@ -79,7 +79,17 @@ class BookmarksController < ApplicationController
   def add_topic
     @bookmark = Bookmark.find_by_permalink(params[:bookmark_id])
     
-    params[:topic].to_s.split(",").each do |topic|
+    @topics = []
+    
+    @bookmark.topic_list.each do |topic|
+      @topics << topic
+    end
+    
+    params[:topic].split(",").each do |topic|
+      @topics << topic
+      @topics.uniq
+    end
+    @topics.each do |topic|
       @bookmark.topic_list.add(topic)
     end
         
