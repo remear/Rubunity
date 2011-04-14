@@ -1,2 +1,5 @@
-$("input#rails_version").val("");
-$("#rails-versions").append("<span><%= params[:rails_version] %></span>");
+<% params[:rails_versions].each do |tags| %>
+  $("#rails-versions").append("<span><%= tags %></span>");
+<% end %>
+
+$("a#fancybox-close").click();
