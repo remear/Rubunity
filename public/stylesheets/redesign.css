@@ -24,6 +24,14 @@ blockquote cite { margin:5px 0 0; display:block; }
 	box-shadow:2px 2px 6px #999;
 }
 
+.right { float:right; }
+
+.fullwidth { width:100%; }
+
+table.nicetable { border-spacing:0px; }
+table.nicetable thead tr { background:#EAEAEA; color:#334153; }
+table.nicetable tr th, table.nicetable tr td { text-align:left; padding:0px 10px 0px 10px; }
+
 /* Begin Lists */
 html > body .content ul {margin-left:0px; padding:0 0 0 30px; list-style:none; padding-left:10px; text-indent:-10px;}
 html > body .content li {margin:7px 0 8px 10px;}

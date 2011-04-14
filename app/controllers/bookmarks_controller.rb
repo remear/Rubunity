@@ -2,7 +2,6 @@ class BookmarksController < ApplicationController
   load_and_authorize_resource
   
   before_filter :require_user, :except => [:index, :show]
-  layout 'standard'
   
   # GET /bookmarks
   # GET /bookmarks.xml
