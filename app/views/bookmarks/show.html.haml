@@ -52,7 +52,8 @@
 %h2.section
   Topics
   %span{:style => 'float:right; font-size:12px;'}
-    %a{:href => "#topic-form", :rel => "fancybox", :class => "addleft"} Add Topic
+    - if can? :add_topic, @bookmark
+      %a{:href => "#topic-form", :rel => "fancybox", :class => "addleft"} Add Topic
     
 #topics
   - if ! @bookmark.topic_list.blank?
@@ -74,7 +75,8 @@
 %h2.section
   Rails Versions
   %span{:style => 'float:right; font-size:12px;'}
-    = link_to 'Add Rails Version', '#rails-version-list', {:rel => 'fancybox', :class => 'addleft'}
+    - if can? :add_rails_version, @bookmark
+      = link_to 'Add Rails Version', '#rails-version-list', {:rel => 'fancybox', :class => 'addleft'}
      
 #rails-versions
   - if ! @bookmark.rails_version_list.blank?
@@ -104,7 +106,8 @@
 %h2.section
   Ruby Versions
   %span{:style => 'float:right; font-size:12px;'}
-    %a{:href => "#ruby_version_form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
+    - if can? :add_ruby_version, @bookmark
+      %a{:href => "#ruby_version_form", :rel => "fancybox", :class => "addleft"} Add Ruby Version
     
 #ruby-versions
   - if ! @bookmark.ruby_version_list.blank?

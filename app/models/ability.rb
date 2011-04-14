@@ -21,9 +21,9 @@ class Ability
     
       if user.role?(:contributor)
         can :create, Bookmark
-        can :add_topic, Bookmark
-        can :add_rails_version, Bookmark
-        can :add_ruby_version, Bookmark
+        can :add_topic, Bookmark, :user_id => user.id
+        can :add_rails_version, Bookmark, :user_id => user.id
+        can :add_ruby_version, Bookmark, :user_id => user.id
         can :update, Bookmark do |bookmark|
           bookmark.try(:user) == user
         end

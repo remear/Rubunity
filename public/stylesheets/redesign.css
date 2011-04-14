@@ -643,3 +643,9 @@ a:hover { color:#3A3D43; }
 .version_check_box input[type=checkbox] {
   display: inline;
 }
+
+.up_vote {
+  width: 30px;
+  vertical-align: middle;
+  cursor: pointer;
+}
