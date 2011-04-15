@@ -21,4 +21,8 @@ $(function() {
     window.location.href = "/bookmark/vote/" + $(this).attr('value');
   });
   
+  $('.add-topic-link').click(function() {
+    $('input#topic').focus();
+  });
+  
 });
