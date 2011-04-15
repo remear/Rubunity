@@ -6,7 +6,7 @@ $("#ruby-versions").children().each(function(){
   ruby_array.push("<span>" + $(this).text() + "</span>");
 });
 
-<% params[:ruby_version].split(",").each do |version| %>
+<% params[:ruby_version].split(%r{,\s*}).each do |version| %>
   ruby_array.push("<span><%= version %></span>");
 <% end %>
 

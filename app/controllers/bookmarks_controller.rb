@@ -85,7 +85,7 @@ class BookmarksController < ApplicationController
       @topics << topic
     end
     
-    params[:topic].split(",").each do |topic|
+    params[:topic].split(%r{,\s*}).each do |topic|
       @topics << topic
       @topics.uniq
     end
