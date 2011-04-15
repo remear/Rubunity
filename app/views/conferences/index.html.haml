@@ -35,6 +35,6 @@
     %tbody
     - @conferences.each do |conference|
       %tr
-        %td= conference.name
+        %td= link_to conference.name, conference
         %td= conference.speaker
         %td= conference.startdate.localtime.to_s(:long)

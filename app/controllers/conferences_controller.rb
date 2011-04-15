@@ -2,11 +2,15 @@ class ConferencesController < ApplicationController
   # GET /conferences
   # GET /conferences.xml
   def index
-    @conferences = Conference.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @conferences }
+    begin
+     @conferences = Conference.all
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = "No Conferences have been scheduled."
+    else
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @conferences }
+      end
     end
   end
 
