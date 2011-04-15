@@ -25,4 +25,8 @@ $(function() {
     $('input#topic').focus();
   });
   
+  $('.add-ruby-link').click(function() {
+    $('input#ruby_version').focus();
+  });
+  
 });
